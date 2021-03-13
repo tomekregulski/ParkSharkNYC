@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet"
+   type = "text/css"
+   href = "./assets/css/style.css" />
     <title>ParkSharkNYC</title>
 </head>
 <body>
     <header>
         <h1>ParkSharkNYC</h1>
-        <ul>
+        <nav>
             <li><a href="#">Plan</a></li>
             <li><a href="#">Save</a></li>
             <li><a href="#">Remember</a></li>
-        </ul>
+        </nav>
     </header>
 
-    <div id="coords box">
-        <button id="GPS">GPS</button>
-        <p>or</p>
-        <form>
-            <input type="text" id="zip" placeholder="Zip Code"> <button id="go">Go</button>
+    <div class="gps">
+        <button class="coord">GPS</button>
+        <p class ="coord">or</p>
+        <form class="coord">
+            <input type="text" id="zip" placeholder="Zip Code">
+            <button id="go">Go</button>
         </form>
     </div>
 
-    <div id="map box">
+    <div class="mapBox">
         <img src="./assets/Map Placeholder.png">
     </div>
-    <div class="container">
-        <h2>Park Name</h2>
-        <h4>Address</h4>
-        <h4>Monument</h4> 
-    </div>
-    <div class="container">
-        <h2>Result</h2>
-    </div>
-    <div class="container">
-        <h2>Result</h2>
-    </div>
+    
 </body>
 </html>
