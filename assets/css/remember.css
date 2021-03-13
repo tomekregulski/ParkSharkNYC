@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 400px;
+}
+
+#rememberTable {
+    margin: 0 70px;
+    text-align: center;
+    border: 1px solid black;
+    max-width: 100%;
+    white-space: nowrap;
+    /* max-width: 300px; */
+}
+
+#rememberTable th, td {
+    border: 1px solid black;
+}
+
+.notes {
+    text-align: left;
+    white-space: pre-wrap;
+}
