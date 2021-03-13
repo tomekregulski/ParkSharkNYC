@@ -31,7 +31,7 @@ window.onload = function CreateTableFromJSON () {
     
     console.log(memories);
 
-    //extract Values for table header
+    //extract values for table header
     var col = [];
     for (var i = 0; i < memories.length; i++) {
         for (var key in memories[i]) {
