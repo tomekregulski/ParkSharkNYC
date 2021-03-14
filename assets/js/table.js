@@ -79,7 +79,7 @@ window.onload = function loadMemories () {
 //shows and hides the memories table on button click
 function showHide() {
     
-    if (memories == ""){
+    if (savedMem == ""){
         alert("You have no saved memories.");
         return false;
     } else {
@@ -102,7 +102,7 @@ function showHide() {
 
   //clears memories
   function clearMem () {
-    if (memories == ""){
+    if (savedMem == ""){
         alert("You have no saved memories.");
         return false;
     } else {
