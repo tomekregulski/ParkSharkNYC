@@ -1,6 +1,12 @@
-//calls memories object from local storage and converts JSON to JS object
-var memories = JSON.parse(localStorage.getItem("memories"))
+//retrieves raw memories JSON from storage
+var memJSON = localStorage.getItem("memories");
 
+console.log(memJSON);
+
+//converts memories JSON to JS object
+var memories = JSON.parse(memJSON);
+
+console.log(memories);
 
 window.onload = function loadMemories () {
     
@@ -61,13 +67,16 @@ function showHide() {
         return false;
     } else {
         var x = document.getElementById("showData");
+        var y = document.getElementById("container");
 
         if (x.style.display === "none") {
             x.style.display = "block";
+            y.style.display = "none";
             var showButton = document.getElementById("show");
             showButton.innerHTML = "Hide Memories";
         } else {
             x.style.display = "none";
+            y.style.display = "block";
             var showButton = document.getElementById("show");
             showButton.innerHTML = "Show Memories";
         }
