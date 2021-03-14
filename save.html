@@ -9,6 +9,7 @@
     <script src="save.js" defer></script>
 </head>
 <body>
+
     <header>
         <h1>ParkSharkNYC</h1>
         <nav>
@@ -17,13 +18,14 @@
             <li><a href="#">Remember</a></li>
         </nav>
     </header>
-    
+
+    <br>
     <div class="container">
         <form>
 
             <div class="input">
                 <label for="park-name">Park Name</label>
-                <input type="text" name="Park Name" id="park-name">
+                <input type="text" name="Park Name" id="park-name" placeholder="required">
             </div>
             
             <div class="input">
@@ -34,12 +36,20 @@
             <div class="input">
                 <label for="saving-notes">Notes:</label>
                 <br>
-                <textarea name="Notes" id="saving-notes" cols="30" rows="10"></textarea>
+                <textarea name="Notes" id="saving-notes" placeholder="optional"></textarea>
             </div>
 
             <button type="submit" id="save">Save</button>
             
         </form>
     </div>
+
+    <div>
+        <div class="button"><button type="button" id="show" onclick="showHide()">Show Memories</button></div>
+        <p id="showData" style="display:none;"></p>
+        <div class="button"><button type="button" id="clear" onclick="clearMem()">Clear Memories</button></div>
+    </div>
+    
 </body>
+<script src="assets/js/tablejsdraft.js"></script>
 </html>

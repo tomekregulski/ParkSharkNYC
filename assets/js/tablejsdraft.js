@@ -1,33 +1,7 @@
-window.onload = function CreateTableFromJSON () {
-    
-    //placeholder JSON
-    var memories = [
-        {
-            'Park Name': 'Park 1',
-            'Date': '1/1/21',
-            'Notes': 'My pup loves the dog run here!'
-        },
-        {
-            'Park Name': 'Park 2',
-            'Date': '1/28/21',
-            'Notes': 'There is a beautiful monument at this park.'
-        },
-        {
-            'Park Name': 'Park 3',
-            'Date': '2/12/21',
-            'Notes': 'It started raining when I got there, so I will have to come back!'
-        },
-        {
-            'Park Name': 'Park 4',
-            'Date': '2/28/21',
-            'Notes': 'I love sitting by the pond here.'
-        },
-        {
-            'Park Name': 'Park 5',
-            'Date': '3/6/21',
-            'Notes': 'We thought it would be a nice day for a picnic since the weather warmed up. The wind blew our blanket into the river. Maybe next time.'
-        }
-    ]
+//calls memories object from local storage and converts JSON to JS object
+var memories = JSON.parse(localStorage.getItem("memories"))
+
+window.onload = function loadMemories () {
     
     console.log(memories);
 
@@ -73,5 +47,45 @@ window.onload = function CreateTableFromJSON () {
     divShowData.innerHTML = "";
     divShowData.appendChild(table);
 
+
 };
 
+console.log(memories);
+
+//shows and hides the memories table on button click
+function showHide() {
+    
+    if (memories == ""){
+        alert("You have no saved memories.");
+        return false;
+    } else {
+        var x = document.getElementById("showData");
+
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            var showButton = document.getElementById("show");
+            showButton.innerHTML = "Hide Memories";
+        } else {
+            x.style.display = "none";
+            var showButton = document.getElementById("show");
+            showButton.innerHTML = "Show Memories";
+        }
+    }
+  };
+
+  
+  function clearMem () {
+    if (memories == ""){
+        alert("You have no saved memories.");
+        return false;
+    } else {
+        var warning = confirm("WARNING! You are about to erase all of your saved data. This cannot be undone. Do you want to proceed?");
+        if (warning === true){
+            localStorage.clear("memories");
+            location.reload();
+        }
+        else {
+            return false;
+        }
+    }
+  };
