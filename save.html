@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save</title>
+    <link href="save.css" rel="stylesheet">
+    <script src="save.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>ParkSharkNYC</h1>
+        <nav>
+            <li><a href="#">Plan</a></li>
+            <li><a href="#">Save</a></li>
+            <li><a href="#">Remember</a></li>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <form>
+
+            <div class="input">
+                <label for="park-name">Park Name</label>
+                <input type="text" name="Park Name" id="park-name">
+            </div>
+            
+            <div class="input">
+                <label for="date-visited">Date Visited</label>
+                <input type="date" name="Date" id="date-visited">
+            </div>
+
+            <div class="input">
+                <label for="saving-notes">Notes:</label>
+                <br>
+                <textarea name="Notes" id="saving-notes" cols="30" rows="10"></textarea>
+            </div>
+
+            <button type="submit" id="save">Save</button>
+            
+        </form>
+    </div>
+</body>
+</html>
