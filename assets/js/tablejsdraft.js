@@ -4,13 +4,17 @@ var memJSON = localStorage.getItem("memories");
 console.log(memJSON);
 
 //converts memories JSON to JS object
-var memories = JSON.parse(memJSON);
-
-console.log(memories);
+var memories = JSON.parse(memJSON, function (key, value) {
+    if (key == "Date") {
+        return new Date(value);
+      } else {
+        return value;
+      }
+});
 
 window.onload = function loadMemories () {
     
-    console.log(memories);
+    console.log(memories.value);
 
     //extract values for table header
     var col = [];
@@ -40,10 +44,16 @@ window.onload = function loadMemories () {
     for (var i = 0 ; i < memories.length; i++) {
 
         tr = table.insertRow(-1);
+        var keys = Object.keys(memories);
+        var values = Object.values(memories);
+        console.log(keys);
+        console.log(values);
+        
 
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
             tabCell.innerHTML = memories[i][col[j]];
+            
         }
     }
 
@@ -56,8 +66,6 @@ window.onload = function loadMemories () {
 
 
 };
-
-console.log(memories);
 
 //shows and hides the memories table on button click
 function showHide() {

@@ -38,7 +38,7 @@ function handleSave(event) {
     //sends appended memories object back to storage as JSON
     localStorage.setItem("memories", JSON.stringify(memories));
 
-    console.log(memories);
+    //reloads page on submission to update table
     location.reload();
   }
   
