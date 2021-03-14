@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    margin: 0;
+    padding: 10px;
+    background-color: #294628;
+    border-bottom: solid #1C2F1B 3px;
+    box-shadow: 0px 0px 10px #294628;
+}
+
+nav {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+}
+
+h1 {
+    color: #5A9857;
+    font-weight: bold;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #5A9857;
+}
+
+.gps {
+    margin: auto;
+    width: 295px;
+    padding: 20px;
+    text-align: center;
+}
+
+.coord {
+    display: inline;
+    float: left;
+    margin: 2px;
+    position: relative;
+}
+
+.mapBox {
+    clear: left;
+    margin: auto;
+    width: 613px;
+}
+
+.map {
+    width: 613px;
+}
