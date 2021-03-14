@@ -44,7 +44,7 @@ div {
 }
 
 .content {
-    margin-top: 95px;
+    margin-top: 115px;
 }
 
 .input {
@@ -160,6 +160,9 @@ tr:hover {
 }
 
 @media (min-width: 360px) {
+    .content{
+        margin-top: 120px;
+    }
     table {
         width: 340px;
     }
@@ -172,6 +175,9 @@ tr:hover {
 }
 
 @media (min-width: 400px) {
+    .content{
+        margin-top: 135px;
+    }
     table {
         width: 390px;
     }
@@ -180,5 +186,37 @@ tr:hover {
     }
     textarea {
         width: 354px;
+    }
+}
+
+@media (min-width: 640px) {
+    .content{
+        margin-top: 145px;
+    }
+    table {
+        width: 630px;
+    }
+    .input, .save, #save {
+        width: 600px;
+    }
+    textarea {
+        width: 594px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 900px) {
+    .content{
+        margin-top: 160px;
+    }
+    table {
+        width: 890px;
+    }
+    .input, .save, #save {
+        width: 860px;
+    }
+    textarea {
+        width: 854px;
+        height: 160px;
     }
 }
