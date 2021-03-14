@@ -1,9 +1,9 @@
 //calls memories object from local storage and converts JSON to JS object
-var memories = JSON.parse(localStorage.getItem("memories"));
+var savedMem = JSON.parse(localStorage.getItem("memories"));
 
 //if storage is empty changes null value to empty string
-while (memories === null) {
-    var memories = [];
+while (savedMem === null) {
+    var savedMem = [];
 }
 
 //save function that activates upon save button click
@@ -33,10 +33,10 @@ function handleSave(event) {
     console.log(value);
 
     //appends the memories object pulled from storage with new form data
-    memories.push(value);
+    savedMem.push(value);
 
     //sends appended memories object back to storage as JSON
-    localStorage.setItem("memories", JSON.stringify(memories));
+    localStorage.setItem("memories", JSON.stringify(savedMem));
 
     //reloads page on submission to update table
     location.reload();

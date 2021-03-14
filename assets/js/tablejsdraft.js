@@ -3,6 +3,19 @@ var memJSON = localStorage.getItem("memories");
 
 console.log(memJSON);
 
+function sortByProperty(property){
+    return function(a,b) {
+        if (a[property] > b[property]){
+        return 1;
+        } else {
+            return -1;
+        }
+    }
+};
+
+//var sortDate = memJSON.sort(sortByProperty("Date"));
+//console.log(sortDate);
+
 //converts memories JSON to JS object
 var memories = JSON.parse(memJSON, function (key, value) {
     if (key == "Date") {
@@ -12,11 +25,12 @@ var memories = JSON.parse(memJSON, function (key, value) {
       }
 });
 
+//loads table of saved memories
 window.onload = function loadMemories () {
     
-    console.log(memories.value);
+    console.log(memories);
 
-    //extract values for table header
+    //extracts values for table header
     var col = [];
     for (var i = 0; i < memories.length; i++) {
         for (var key in memories[i]) {
@@ -28,10 +42,10 @@ window.onload = function loadMemories () {
 
     console.log(col);
 
-    //create table
+    //creates table
     var table = document.createElement("table");
 
-    //create header row using extracted data
+    //creates header row using extracted data
     var tr = table.insertRow(-1);
 
     for (var i = 0; i < col.length; i++) {
@@ -40,15 +54,10 @@ window.onload = function loadMemories () {
         tr.appendChild(th);
     }
 
-    //add JSON data to table as individual rows
+    //adds JSON data to table as individual rows
     for (var i = 0 ; i < memories.length; i++) {
 
         tr = table.insertRow(-1);
-        var keys = Object.keys(memories);
-        var values = Object.values(memories);
-        console.log(keys);
-        console.log(values);
-        
 
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
@@ -56,8 +65,6 @@ window.onload = function loadMemories () {
             
         }
     }
-
-    console.log(table);
 
     //displays data in body
     var divShowData = document.getElementById("showData");
@@ -74,8 +81,8 @@ function showHide() {
         alert("You have no saved memories.");
         return false;
     } else {
-        var x = document.getElementById("showData");
-        var y = document.getElementById("container");
+        let x = document.getElementById("showData");
+        let y = document.getElementById("container");
 
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -91,7 +98,7 @@ function showHide() {
     }
   };
 
-  
+  //clears memories
   function clearMem () {
     if (memories == ""){
         alert("You have no saved memories.");
