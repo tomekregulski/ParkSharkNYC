@@ -36,19 +36,37 @@ div {
     padding: 5px;
 }
 
+.input {
+    width: 275px;
+    margin: auto;
+}
+
 .button {
     max-width: 125px;
     margin: auto;
 }
 
-table {
+#save {
+    width: 275px;
+}
+
+.save {
+    width: 275px;
     margin: auto;
-    margin: 10px;
+}
+
+textarea {
+    width: 269px;
+}
+
+table {
+    margin: 10px auto 10px auto;
+    padding: 15px;
     width: 340px;
 }
 
 th, td, p, input {
-    font:9px Verdana;
+    font:11px Verdana;
 }
 
 table, th, td {
@@ -63,5 +81,5 @@ th {
 }
 
 label {
-    font-size: 14px;
+    font-size: 13px;
 }

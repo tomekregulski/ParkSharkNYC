@@ -1,6 +1,7 @@
 //calls memories object from local storage and converts JSON to JS object
 var memories = JSON.parse(localStorage.getItem("memories"))
 
+
 window.onload = function loadMemories () {
     
     console.log(memories);
