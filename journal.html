@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSharkNYC | Journal</title>
+    <link href="./assets/css/journal.css" rel="stylesheet">
+    
+    <script src="assets/js/moment.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ParkSharkNYC</h1>
+        <nav>
+            <li><a href="#">Plan</a></li>
+            <li><a href="#">Journal</a></li>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="container" id="container">
+            <form id="myForm">
+                <div class="input">
+                    <label for="park-name">Park Name</label>
+                    <br>
+                    <input type="text" name="Park Name" id="park-name" placeholder="required">
+                </div>
+                <div class="input">
+                    <label for="date-visited">Date Visited</label>
+                    <br>
+                    <input type="date" name="Date" id="date-visited">
+                </div>
+                <div class="input">
+                    <label for="saving-notes">Notes:</label>
+                    <br>
+                    <textarea name="Notes" id="saving-notes" placeholder="optional"></textarea>
+                </div>
+                <div class="save"><button type="submit" id="save">Save</button></div>
+            </form>
+        </div>
+        <div>
+            <div class="button"><button type="button" id="show" onclick="showHide()">Show Memories</button></div>
+            <p id="showData" style="display:none;"></p>
+            <div class="button"><button type="button" id="clear" onclick="clearMem()">Clear Memories</button></div>
+        </div>
+    </div>
+</body>
+    <script src="./assets/js/table.js"></script>
+    <script src="./assets/js/save.js"></script>
+</html>
