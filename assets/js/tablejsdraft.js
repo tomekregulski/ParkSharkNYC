@@ -19,7 +19,10 @@ function sortByProperty(property){
 //converts memories JSON to JS object
 var memories = JSON.parse(memJSON, function (key, value) {
     if (key == "Date") {
-        return new Date(value);
+        var dateObj = new Date(value);
+        console.log(dateObj);
+        var newDate = moment(dateObj).format("ll");
+        return newDate;
       } else {
         return value;
       }
@@ -62,7 +65,6 @@ window.onload = function loadMemories () {
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
             tabCell.innerHTML = memories[i][col[j]];
-            
         }
     }
 
