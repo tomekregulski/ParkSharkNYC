@@ -23,7 +23,7 @@ h1 {
 nav {
     list-style: none;
     text-align: center;
-    width: 250px;
+    width: 240px;
     margin: 8px auto;
 }
 
@@ -48,7 +48,7 @@ div {
 }
 
 .input {
-    width: 275px;
+    width: 240px;
     margin: auto;
 }
 
@@ -58,7 +58,7 @@ div {
 }
 
 .save {
-    width: 275px;
+    width: 240px;
     margin: auto;
 }
 
@@ -68,7 +68,7 @@ div {
 }
 
 #save {
-    width: 275px;
+    width: 240px;
 }
 
 #showData {
@@ -82,13 +82,14 @@ div {
 }
 
 textarea {
-    width: 269px;
+    width: 234px;
+    height: 75px;
 }
 
 table {
-    margin: 10px auto 10px auto;
-    padding: 15px;
-    width: 340px;
+    margin: 5px auto 5px auto;
+    padding: 15px;    
+    width: 260px;
 }
 
 th, td, p, input {
@@ -102,12 +103,31 @@ table, th, td {
     text-align: center;
 }
 
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
 th {
     font-weight:bold;
+    background-color: #6ca969;
 }
+
+tr>:nth-child(1) { 
+    Width: 23%;
+    }
+
+tr>:nth-child(3) { 
+    Width: 58%;
+    }
 
 label {
     font-size: 13px;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
 }
 
 #show:visited {
@@ -126,3 +146,39 @@ label {
   :-moz-placeholder { /* Firefox 18- */
     font-size: 11px;
   }
+
+@media (min-width: 320px) {
+    table {
+        width: 300px;
+    }
+    .input, .save, #save {
+        width: 280px;
+    }
+    textarea {
+        width: 274px;
+    }
+}
+
+@media (min-width: 360px) {
+    table {
+        width: 340px;
+    }
+    .input, .save, #save {
+        width: 320px;
+    }
+    textarea {
+        width: 314px;
+    }
+}
+
+@media (min-width: 400px) {
+    table {
+        width: 390px;
+    }
+    .input, .save, #save {
+        width: 360px;
+    }
+    textarea {
+        width: 354px;
+    }
+}
