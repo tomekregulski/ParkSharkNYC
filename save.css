@@ -74,6 +74,7 @@ div {
 #showData {
     max-height: 450px;
     overflow: scroll;
+    overflow-x: hidden;
 }
 
 #clear {
