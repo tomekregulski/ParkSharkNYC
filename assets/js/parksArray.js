@@ -24,14 +24,14 @@ function getParkLocations() {
                 newPark['address'] = address;
                 newPark['coord'] = coord;
                 if (parksWithTrails.includes(parkName)) {
-                    newPark['trails'] = true;
+                    newPark['trails'] = 'Yes';
                 } else {
-                    newPark['trails'] = false;
+                    newPark['trails'] = 'No';
                 }
                 if (parksWithMonuments.includes(parkName)) {
-                    newPark['monument'] = true;
+                    newPark['monument'] = 'Yes';
                 } else {
-                    newPark['monument'] = false;
+                    newPark['monument'] = 'No';
                 }
                 parksArray.push(newPark);
         }

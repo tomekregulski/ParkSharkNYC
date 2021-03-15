@@ -54,3 +54,23 @@ a {
 .map {
     width: 613px;
 }
+
+/***************************/
+/***** Google Map *********/
+
+#map {
+    height: 400px;
+    width: 50%;
+    background-color: grey;
+    margin: auto;
+}
+
+.map-div {
+  display: none;
+}
+
+.map-div.show {
+  display: block;
+}
+
+/***************************/
