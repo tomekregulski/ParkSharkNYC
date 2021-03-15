@@ -1,23 +1,76 @@
 //retrieves raw memories JSON from storage
 var memJSON = localStorage.getItem("memories");
 
+var savedMem = [];
+
 console.log(memJSON);
 
-function sortByProperty(property){
-    return function(a,b) {
-        if (a[property] > b[property]){
-        return 1;
-        } else {
+//sorts objects in array by property
+function sortByProperty(prop) {
+    return function(a, b) {
+        if (a[prop] > b[prop]){
+            return 1;
+        } else if (a[prop] < b[prop]) {
             return -1;
+        } else {
+            return 0;
         }
     }
 };
 
-//var sortDate = memJSON.sort(sortByProperty("Date"));
-//console.log(sortDate);
+var slider = document.getElementById("slider");
 
-//converts memories JSON to JS object
-var memories = JSON.parse(memJSON, function (key, value) {
+var isChecked = slider.checked;
+console.log(isChecked);
+
+slider.addEventListener('change', function() {
+    savedMem = JSON.parse(memJSON);
+    if (isChecked === true) {
+        savedMem.sort(sortByProperty("Date"));
+        console.log(savedMem);
+        loadMemories ();
+        isChecked = false;
+        saveCheck();
+        console.log(isChecked);
+    } else {
+        savedMem.sort(sortByProperty("Park"));
+        console.log(savedMem);
+        isChecked = true;
+        loadMemories ();
+        saveCheck();
+        console.log(isChecked);
+    }
+  });
+
+  function saveCheck (){
+    localStorage.setItem("slider", isChecked);
+}
+
+window.onload = function() {
+    slider = JSON.parse(localStorage.getItem("slider"));
+    if (isChecked === true) {
+        savedMem.sort(sortByProperty("Park"));
+        loadMemories();
+        return;
+    } else {
+        savedMem.sort(sortByProperty("Date"));
+        loadMemories();
+        return;
+    }
+}
+
+///
+
+rawMem = [];
+
+//loads table of saved memories
+function loadMemories () {
+
+    console.log(savedMem);
+
+    //takes sortMem JSON and converts it to JS object with dates as objects
+    rawMem = JSON.stringify(savedMem)
+    var sortMem = JSON.parse(rawMem, function (key, value) {
     if (key == "Date") {
         var dateObj = new Date(value);
         console.log(dateObj);
@@ -27,16 +80,13 @@ var memories = JSON.parse(memJSON, function (key, value) {
         return value;
       }
 });
-
-//loads table of saved memories
-window.onload = function loadMemories () {
     
-    console.log(memories);
+    console.log(sortMem);
 
     //extracts values for table header
     var col = [];
-    for (var i = 0; i < memories.length; i++) {
-        for (var key in memories[i]) {
+    for (var i = 0; i < sortMem.length; i++) {
+        for (var key in sortMem[i]) {
             if (col.indexOf(key) === -1) {
                 col.push(key);
             }
@@ -58,13 +108,13 @@ window.onload = function loadMemories () {
     }
 
     //adds JSON data to table as individual rows
-    for (var i = 0 ; i < memories.length; i++) {
+    for (var i = 0 ; i < sortMem.length; i++) {
 
         tr = table.insertRow(-1);
 
         for (var j = 0; j < col.length; j++) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = memories[i][col[j]];
+            tabCell.innerHTML = sortMem[i][col[j]];
         }
     }
 
@@ -85,6 +135,7 @@ function showHide() {
     } else {
         let x = document.getElementById("showData");
         let y = document.getElementById("container");
+        let z = document.getElementById("button");
 
         if (x.style.display === "none") {
             x.style.display = "block";
@@ -112,7 +163,7 @@ function showHide() {
             location.reload();
         }
         else {
-            return false;
+        return false;
         }
     }
   };

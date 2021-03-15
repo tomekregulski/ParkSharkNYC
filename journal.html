@@ -39,12 +39,19 @@
             </form>
         </div>
         <div>
-            <div class="button"><button type="button" id="show" onclick="showHide()">Show Memories</button></div>
-            <p id="showData" style="display:none;"></p>
-            <div class="button"><button type="button" id="clear" onclick="clearMem()">Clear Memories</button></div>
+            <p id="showData" style="display:none;">
+              </label></p>
+            <div class="button">
+                <button type="button" id="show" onclick="showHide()">Show Memories</button>
+                <button type="button" id="clear" onclick="clearMem()">Clear Data</button>
+                <label class="switch">
+                    <input type="checkbox" id="slider">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
     </div>
-</body>
     <script src="./assets/js/table.js"></script>
     <script src="./assets/js/save.js"></script>
+</body>
 </html>
