@@ -1,6 +1,7 @@
 // declare global variables
 var gpsBtn = document.getElementById('gps');
 var zipSearch = document.getElementById('go');
+var inputField = document.getElementById('zip');
 var userLat;
 var userLon;
 var parkResults = [];
@@ -13,6 +14,7 @@ zipSearch.addEventListener('click', zipCoord); //
 function zipCoord(event)  {
     event.preventDefault();
     console.log('working');
+    console.log(inputField.value);
     // userLat = "";
     // userLon = "";
     // checkParkCoord();
