@@ -41,16 +41,21 @@
         <div>
             <p id="showData" style="display:none;">
               </label></p>
-            <div class="button">
+            <div class="showBtn">
                 <button type="button" id="show" onclick="showHide()">Show Memories</button>
-                <button type="button" id="clear" onclick="clearMem()">Clear Data</button>
-                <label class="switch">
-                    <input type="checkbox" id="slider">
-                    <span class="slider round"></span>
-                </label>
             </div>
         </div>
     </div>
+    <footer>
+            <label id="clearBtn">
+                <button type="button" class="clear" id="clear" onclick="clearMem()" hidden><span id="x">X</span></button>
+            </label>
+            <h4 hidden>clear data</h4>
+            <label class="switch">
+                <input type="checkbox" class="invis" id="slider">
+                <span class="slider round" id="slider round" hidden></span>
+            </label>
+    </footer>
     <script src="./assets/js/table.js"></script>
     <script src="./assets/js/save.js"></script>
 </body>

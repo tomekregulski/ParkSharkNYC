@@ -135,16 +135,24 @@ function showHide() {
     } else {
         let x = document.getElementById("showData");
         let y = document.getElementById("container");
-        let z = document.getElementById("button");
+        let z = document.getElementById("slider round");
+        let w = document.getElementById("clear");
+        let u = document.querySelector("h4");
 
         if (x.style.display === "none") {
             x.style.display = "block";
             y.style.display = "none";
+            z.style.display = "block";
+            w.style.display = "block";
+            u.style.display = "block";
             var showButton = document.getElementById("show");
             showButton.innerHTML = "Hide Memories";
         } else {
             x.style.display = "none";
             y.style.display = "block";
+            z.style.display = "none";
+            w.style.display = "none";
+            u.style.display = "none";
             var showButton = document.getElementById("show");
             showButton.innerHTML = "Show Memories";
         }
