@@ -1,6 +1,7 @@
 // declare global variables
 var gpsBtn = document.getElementById('gps');
 var zipSearch = document.getElementById('go');
+var inputField = document.getElementById('zip');
 var userLat;
 var userLon;
 var parkResults = [];
@@ -13,6 +14,7 @@ zipSearch.addEventListener('click', zipCoord); //
 function zipCoord(event)  {
     event.preventDefault();
     console.log('working');
+    console.log(inputField.value);
     // userLat = "";
     // userLon = "";
     // checkParkCoord();
@@ -43,6 +45,7 @@ function getLocation() {
         var parkIndex = i; 
         distance(userLat, userLon, parkLat, parkLon, park, parkIndex);
     }
+    showMap();
 };
 
 function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
@@ -69,10 +72,11 @@ function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
         var closePark = {};
         closePark['name'] = park;
         closePark['address'] = parksArray[closeParkIndex].address;
-        closePark['monuement'] = parksArray[closeParkIndex].monument;
+        closePark['monument'] = parksArray[closeParkIndex].monument;
         closePark['trails'] = parksArray[closeParkIndex].trails;
         closePark['distance'] = distance;
         closePark['parksIndex'] = parkIndex;
+        closePark['coord'] = [lat2,lon2]
         // console.log(closePark);
         parkResults.push(closePark);
         } 
