@@ -40,7 +40,7 @@ Clone the repo and open the folder in the code editor of your choice. Open index
 
 MIT License
 
-Copyright (c) [2021] [Tomek Regulski]
+Copyright (c) [2021] [Jessie Li, Samy Ozuna, Sean Weber, Tomek Regulski]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
