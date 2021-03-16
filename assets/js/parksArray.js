@@ -3,36 +3,42 @@ var parksArray = [];
 var parksWithTrails = [];
 var parksWithMonuments = [];
 
-var goBtn = document.getElementById("go")
+// var goBtn = document.getElementById("go")
 // add go button handler 
-//goBtn.addEventListener("click", getParkTrails);
+// goBtn.addEventListener("click", getParkTrails);
+
 // initialize building parksArray by starting with trails
 getParkTrails();
 
 function createResults() {
     //render park names in ol
-    for (var i = 0; i < 1; i++) {//testing smaller array for i < parksArray.length
+    for (var i = 0; i < 2; i++) {//parksArray.length
         //create first li and so on...
         var nameList = document.createElement('li');
         var trailList = document.createElement('li');
         var monumentList = document.createElement('li');
 
-        nameList.textContent = parksArray[i];
-        if (parksWithTrails.includes(parksArray[i]) ){
-            trailList.textContent = 'Trail available: ' + 'Yes';
-        } else {
-            trailList.textContent = 'Trail available: ' + 'No';
-        }
-        if (parksWithMonuments.includes(parksArray[i]) ){
-            monumentList.textContent = 'Monument available: ' + 'Yes';
-        } else {
-            monumentList.textContent = 'Monument available: ' + 'No';
-        }
+        //console.log(parksArray[i])
+        nameList.innerText = parksArray[i].name;
+        trailList.innerText = 'Trail available: ' + parksArray[i].trails
+        monumentList.innerText = 'Monument available: ' + parksArray[i].monument
+        // if (parksWithTrails.includes(parksArray[i].trails) ){
+        //     trailList.textContent = 'Trail available: ' + 'Yes';
+        // } else {
+        //     trailList.textContent = 'Trail available: ' + 'No';
+        // }
+        // if (parksWithMonuments.includes(parksArray[i].monument) ){
+        //     monumentList.textContent = 'Monument available: ' + 'Yes';
+        // } else {
+        //     monumentList.textContent = 'Monument available: ' + 'No';
+        // }
+
         //inside ol, append each li
         var parksList = document.createElement("ol");
         parksList.appendChild(nameList);
         parksList.appendChild(trailList);
         parksList.appendChild(monumentList);
+        parksList.setAttribute("style", "padding: 10px; margin: 20px")
 
         //inside div, append each ol
         var resultEl = document.getElementById("results");
@@ -57,10 +63,11 @@ function getParkTrails() {
                     parksWithTrails.push(parkName);
                 }
             }
+        //console.log(parksWithTrails[0]);
+        getParkMonuments();
         })
     console.log('trails done');
-    console.log(parksWithTrails);
-    getParkMonuments();
+
 };
 
 
@@ -84,10 +91,12 @@ function getParkMonuments() {
                     }
                 }
             }
+        //console.log(parksWithMonuments[0]);
+        getParkLocations();
         })
     console.log('monuments done');
-    console.log(parksWithMonuments);
-    getParkLocations();
+    
+    
 };
 
 function getParkLocations() {
@@ -103,6 +112,7 @@ function getParkLocations() {
                 var parkName = data[i].signname;
                 var address = data[i].location;
                 var coord = data[i].multipolygon.coordinates[0][0][0];
+                
                 var newPark = {};
                 newPark['name'] = parkName;
                 newPark['address'] = address;
@@ -119,9 +129,13 @@ function getParkLocations() {
                 }
                 parksArray.push(newPark);
         }
+        //console.log(parksArray.length);//here it prints 100 to console
+        //console.log(parksArray[0]);
+        createResults();
     })
     console.log('ready');
-    console.log(parksArray);
+    
     // we now have a locally available array of all parks, including whether or not they have a monument or trail (most have neither)
-    createResults();
+    
+    //here console.log(parksArray.length); prints 0
 };
