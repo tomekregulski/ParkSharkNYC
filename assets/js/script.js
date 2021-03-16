@@ -1,7 +1,7 @@
 // declare global variables
 var gpsBtn = document.getElementById('gps');
 var zipSearch = document.getElementById('go');
-var inputField = document.getElementById('zip');
+var zipInput = document.getElementById('zip');
 var userLat;
 var userLon;
 var parkResults = [];
@@ -10,14 +10,22 @@ var parkResults = [];
 gpsBtn.addEventListener('click', getLocation);
 zipSearch.addEventListener('click', zipCoord); // 
 
-// NOT CURRENTLY HOOKED UP - pull coordinates for zip code
+// pull coordinates for zip code
 function zipCoord(event)  {
     event.preventDefault();
     console.log('working');
-    console.log(inputField.value);
-    // userLat = "";
-    // userLon = "";
-    // checkParkCoord();
+    var userZip = zipInput.value;
+    console.log(userZip); 
+    for (var i = 0; i < zipCodes.length; i++) {
+        if (zipCodes[i].zip == userZip) {
+        console.log(zipCodes[i].latitude);
+        console.log(zipCodes[i].longitude);
+        userLat = zipCodes[i].latitude;
+        userLon = zipCodes[i].longitude;
+        console.log(userLat, userLon);
+        }
+    }
+    checkParkCoord();
 };
 
 // Captures user's current location and sets user lat/lon
@@ -45,7 +53,7 @@ function getLocation() {
         var parkIndex = i; 
         distance(userLat, userLon, parkLat, parkLon, park, parkIndex);
     }
-    showMap();
+    // showMap();
 };
 
 function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
