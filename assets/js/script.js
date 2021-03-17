@@ -41,7 +41,6 @@ function createResults() {
         resultEl.appendChild(parksdiv);
     }
 }
-
 // pull coordinates for zip code
 function zipCoord(event)  {
     event.preventDefault();
