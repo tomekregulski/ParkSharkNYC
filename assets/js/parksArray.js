@@ -3,48 +3,8 @@ var parksArray = [];
 var parksWithTrails = [];
 var parksWithMonuments = [];
 
-// var goBtn = document.getElementById("go")
-// add go button handler 
-// goBtn.addEventListener("click", getParkTrails);
-
 // initialize building parksArray by starting with trails
 getParkTrails();
-
-function createResults() {
-    //render park names in ol
-    for (var i = 0; i < 2; i++) {//parksArray.length
-        //create first li and so on...
-        var nameList = document.createElement('li');
-        var trailList = document.createElement('li');
-        var monumentList = document.createElement('li');
-
-        //console.log(parksArray[i])
-        nameList.innerText = parksArray[i].name;
-        trailList.innerText = 'Trail available: ' + parksArray[i].trails
-        monumentList.innerText = 'Monument available: ' + parksArray[i].monument
-        // if (parksWithTrails.includes(parksArray[i].trails) ){
-        //     trailList.textContent = 'Trail available: ' + 'Yes';
-        // } else {
-        //     trailList.textContent = 'Trail available: ' + 'No';
-        // }
-        // if (parksWithMonuments.includes(parksArray[i].monument) ){
-        //     monumentList.textContent = 'Monument available: ' + 'Yes';
-        // } else {
-        //     monumentList.textContent = 'Monument available: ' + 'No';
-        // }
-
-        //inside ol, append each li
-        var parksList = document.createElement("ol");
-        parksList.appendChild(nameList);
-        parksList.appendChild(trailList);
-        parksList.appendChild(monumentList);
-        parksList.setAttribute("style", "padding: 10px; margin: 20px")
-
-        //inside div, append each ol
-        var resultEl = document.getElementById("results");
-        resultEl.appendChild(parksList);
-    }
-}
 
 function getParkTrails() {
 
@@ -67,7 +27,7 @@ function getParkTrails() {
         getParkMonuments();
         })
     console.log('trails done');
-
+    
 };
 
 
@@ -95,7 +55,6 @@ function getParkMonuments() {
         getParkLocations();
         })
     console.log('monuments done');
-    
     
 };
 
@@ -136,6 +95,4 @@ function getParkLocations() {
     console.log('ready');
     
     // we now have a locally available array of all parks, including whether or not they have a monument or trail (most have neither)
-    
-    //here console.log(parksArray.length); prints 0
 };
