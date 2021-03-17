@@ -6,7 +6,7 @@ var parksWithMonuments = [];
 // initialize building parksArray by starting with trails
 // getParkTrails();
 
-// function getParkTrails() {
+function getParkTrails() {
 
     var parksUrl = 'https://data.cityofnewyork.us/resource/vjbm-hsyr.json'
 
