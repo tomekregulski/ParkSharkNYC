@@ -1,6 +1,3 @@
-//calls memories object from local storage and converts JSON to JS object
-var savedMem = JSON.parse(localStorage.getItem("memories"));
-
 //if storage is empty changes null value to empty string
 while (savedMem === null) {
     var savedMem = [];

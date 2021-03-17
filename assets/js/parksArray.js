@@ -4,7 +4,7 @@ var parksWithTrails = [];
 var parksWithMonuments = [];
 
 // initialize building parksArray by starting with trails
-getParkTrails();
+// getParkTrails();
 
 function getParkTrails() {
 
@@ -90,7 +90,6 @@ function getParkLocations() {
         }
         //console.log(parksArray.length);//here it prints 100 to console
         //console.log(parksArray[0]);
-        createResults();
     })
     console.log('ready');
     

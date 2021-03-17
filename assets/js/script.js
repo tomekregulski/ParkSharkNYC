@@ -34,7 +34,7 @@ function createResults() {
         parksdiv.appendChild(monumentList);
         parksdiv.appendChild(trailList);
         
-        parksdiv.setAttribute("style", "padding: 10px; margin: 0 auto");
+        parksdiv.setAttribute("class", "padding: 10px; margin: 0 auto");
 
         //inside div-container, append each div
         var resultEl = document.getElementById("results");
