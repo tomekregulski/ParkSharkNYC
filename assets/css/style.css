@@ -12,6 +12,7 @@
 body {
     background-image: url("../images/bg4.jpg");
     background-size: 100%;
+    /* position: relative; */ /* Not necessary unless we use the filter below */
 }
 
 /**** This is a test for a transparent layer over the background. It does not work properly at the moment, as it prevents the user from being able to click on the zip code search*****/
