@@ -11,14 +11,20 @@
     <script src="assets/js/moment.js"></script>
 </head>
 <body>
+
+    <!--title and page links-->
     <header>
         <h1>ParkSharkNYC</h1>
         <nav>
-            <li><a href="./index.html">Plan</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="#">Journal</a></li>
         </nav>
     </header>
-    <div class="content">
+
+    <!--main content container-->
+    <main class="content">
+
+        <!--save form-->
         <div class="container" id="container">
             <form id="myForm">
                 <div class="input">
@@ -39,6 +45,8 @@
                 <div class="save"><button type="submit" id="save">Save</button></div>
             </form>
         </div>
+
+        <!--memories table-->
         <div>
             <p id="showData" style="display:none;">
               </label></p>
@@ -46,7 +54,10 @@
                 <button type="button" id="show" onclick="showHide()">Show Memories</button>
             </div>
         </div>
-    </div>
+
+    </main>
+
+    <!--clear button and sort toggle-->
     <footer>
             <label id="clearBtn">
                 <button type="button" class="clear" id="clear" onclick="clearMem()" hidden><span id="x">X</span></button>
@@ -57,6 +68,7 @@
                 <span class="slider round" id="slider round" hidden></span>
             </label>
     </footer>
+    <!--JS links-->
     <script src="./assets/js/table.js"></script>
     <script src="./assets/js/save.js"></script>
 </body>
