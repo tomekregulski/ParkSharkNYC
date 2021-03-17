@@ -1,5 +1,8 @@
 /********************************/
 /******** Body/Background *******/
+:root {
+    --primary-green: rgba(81, 211, 139, 0.92);
+}
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -12,6 +15,7 @@ body {
     position: relative;
 }
 
+/**** This is a test for a transparent layer over the background. It does not work properly at the moment, as it prevents the user from being able to click on the zip code search*****/
 /* .layer {
     background-color: rgba(117, 222, 124, 0.331);
     position: absolute;
@@ -35,7 +39,7 @@ body {
 
 header {
     margin-bottom: 15px;
-    background-color: rgba(81, 211, 89, 0.92);
+    background-color: var(--primary-green);
     border-bottom: solid 5px black;
     box-shadow: 5px 0px 5px black;
     padding: 15px 0;
@@ -90,7 +94,7 @@ a {
 
 /* controls placeholder text for zip form */
 ::placeholder {
-    color: rgba(81, 211, 89, 0.92);
+    color: var(--primary-green);
 }
 
 .coord {
@@ -117,7 +121,7 @@ a {
 }
 
 .resultCard {
-    background-color: rgba(81, 211, 89, 0.92);
+    background-color: var(--primary-green);
     margin: 15px auto;
     padding: 20px;
     width: 100%;
