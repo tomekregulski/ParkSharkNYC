@@ -48,6 +48,7 @@ slider.addEventListener('change', function() {
 
 window.onload = function() {
     slider = JSON.parse(localStorage.getItem("slider"));
+    savedMem = JSON.parse(localStorage.getItem("memories"))
     if (isChecked === true) {
         savedMem.sort(sortByProperty("Park"));
         loadMemories();
@@ -58,8 +59,6 @@ window.onload = function() {
         return;
     }
 }
-
-///
 
 rawMem = [];
 

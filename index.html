@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet"
-   type = "text/css"
-   href = "./assets/css/style.css" />
+    type = "text/css"
+    href = "./assets/css/reset.css" />
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "./assets/css/style.css" />
     <title>ParkSharkNYC</title>
 </head>
 <body>
@@ -18,31 +21,30 @@
         </nav>
     </header>
 
-    <div class="gps">
-        <button class="coord" id="gps">GPS</button>
-        <p class ="coord">or</p>
-        <form class="coord">
-            <input type="text" id="zip" placeholder="Zip Code">
-            <button id="go">Go</button>
-        </form>
-    </div>
-    <div class="mapBox">
-        <img src="./assets/Map Placeholder.png" class="map">
-    </div>
-    <div data-role="content" style="padding:0;">
-        <div id="map" class="map-div"></div>
-    </div>
-    <div class="container" id="results">
-        <!-- <h2>Park Name</h2>
-        <h4>Address</h4>
-        <h4>Monument</h4>  -->
-    </div>
-    <!-- <div class="container">
-        <h2>Result</h2>
-    </div>
-    <div class="container">
-        <h2>Result</h2>
-    </div> -->
+    <main class="content">
+        <div class="gps">
+            <button class="coord" id="gps">GPS</button>
+            <p class ="coord">or</p>
+            <form class="coord">
+                <input type="text" id="zip" placeholder="Zip Code">
+                <button id="go">Go</button>
+            </form>
+        </div>
+        <div class="mapBox">
+            <img src="./assets/Map Placeholder.png" class="map">
+        </div>
+        <div data-role="content" style="padding:0;">
+            <div id="map" class="map-div"></div>
+        </div>
+        <div class="container" id="results">
+            <div id="resultCard">
+                <p>Park name</p>
+                <p>Park address</p>
+                <p>Monuments: yes</p>
+                <p>Trails: yes</p>
+            </div>
+        </div>
+    </main>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY-HERE" async></script> -->
     <script src="assets/js/zipCodes.js"></script>
     <script src="assets/js/parksArray.js"></script>
