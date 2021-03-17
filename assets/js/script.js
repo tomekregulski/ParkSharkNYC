@@ -10,6 +10,37 @@ var parkResults = [];
 gpsBtn.addEventListener('click', getLocation);
 zipSearch.addEventListener('click', zipCoord); // 
 
+function createResults() {
+    //render park names in div
+    for (var i = 0; i < 2; i++) {//parksArray.length
+        console.log("rendering div now")
+        //create first p and so on...
+        var nameList = document.createElement('p');
+        var address = document.createElement('p');
+        var monumentList = document.createElement('p');
+        var trailList = document.createElement('p');
+        
+        //console.log(parksArray[i])
+        nameList.innerText = parksArray[i].name;
+        address.innerText = parksArray[i].address;
+        monumentList.innerText = 'Monument available: ' + parksArray[i].monument
+        trailList.innerText = 'Trail available: ' + parksArray[i].trails
+
+        //inside div, append each p
+        var parksdiv = document.createElement("div");
+        
+        parksdiv.appendChild(nameList);
+        parksdiv.appendChild(address);
+        parksdiv.appendChild(monumentList);
+        parksdiv.appendChild(trailList);
+        
+        parksdiv.setAttribute("style", "padding: 10px; margin: 0 auto");
+
+        //inside div-container, append each div
+        var resultEl = document.getElementById("results");
+        resultEl.appendChild(parksdiv);
+    }
+}
 // pull coordinates for zip code
 function zipCoord(event)  {
     event.preventDefault();
@@ -53,7 +84,8 @@ function getLocation() {
         var parkIndex = i; 
         distance(userLat, userLon, parkLat, parkLon, park, parkIndex);
     }
-    // showMap();
+    // showMap(); in map.js
+    createResults();
 };
 
 function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
@@ -88,6 +120,7 @@ function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
         // console.log(closePark);
         parkResults.push(closePark);
         } 
+
     }; // 2 * R; R = 6371 km
 
 // now ready to generate results

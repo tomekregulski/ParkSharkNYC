@@ -6,40 +6,6 @@ var parksWithMonuments = [];
 // initialize building parksArray by starting with trails
 getParkTrails();
 
-function getParkLocations() {
-
-    var parksUrl = 'https://data.cityofnewyork.us/resource/enfh-gkve.json'
-
-    fetch(parksUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then (function (data) {
-            for (var i = 0; i < data.length; i++) {
-                var parkName = data[i].signname;
-                var address = data[i].location;
-                var coord = data[i].multipolygon.coordinates[0][0][0];
-                var newPark = {};
-                newPark['name'] = parkName;
-                newPark['address'] = address;
-                newPark['coord'] = coord;
-                if (parksWithTrails.includes(parkName)) {
-                    newPark['trails'] = 'Yes';
-                } else {
-                    newPark['trails'] = 'No';
-                }
-                if (parksWithMonuments.includes(parkName)) {
-                    newPark['monument'] = 'Yes';
-                } else {
-                    newPark['monument'] = 'No';
-                }
-                parksArray.push(newPark);
-        }
-    })
-    console.log('ready');
-    // we now have a locally available array of all parks, including whether or not they have a monument or trail (most have niether)
-};
-
 function getParkTrails() {
 
     var parksUrl = 'https://data.cityofnewyork.us/resource/vjbm-hsyr.json'
@@ -57,9 +23,11 @@ function getParkTrails() {
                     parksWithTrails.push(parkName);
                 }
             }
+        //console.log(parksWithTrails[0]);
+        getParkMonuments();
         })
     console.log('trails done');
-    getParkMonuments();
+    
 };
 
 
@@ -83,7 +51,48 @@ function getParkMonuments() {
                     }
                 }
             }
+        //console.log(parksWithMonuments[0]);
+        getParkLocations();
         })
     console.log('monuments done');
-    getParkLocations();
+    
+};
+
+function getParkLocations() {
+
+    var parksUrl = 'https://data.cityofnewyork.us/resource/enfh-gkve.json'
+
+    fetch(parksUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then (function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var parkName = data[i].signname;
+                var address = data[i].location;
+                var coord = data[i].multipolygon.coordinates[0][0][0];
+                
+                var newPark = {};
+                newPark['name'] = parkName;
+                newPark['address'] = address;
+                newPark['coord'] = coord;
+                if (parksWithTrails.includes(parkName)) {
+                    newPark['trails'] = 'Yes';
+                } else {
+                    newPark['trails'] = 'No';
+                }
+                if (parksWithMonuments.includes(parkName)) {
+                    newPark['monument'] = 'Yes';
+                } else {
+                    newPark['monument'] = 'No';
+                }
+                parksArray.push(newPark);
+        }
+        //console.log(parksArray.length);//here it prints 100 to console
+        //console.log(parksArray[0]);
+        createResults();
+    })
+    console.log('ready');
+    
+    // we now have a locally available array of all parks, including whether or not they have a monument or trail (most have neither)
 };
