@@ -1,18 +1,53 @@
+/********************************/
+/******** Body/Background *******/
+
 * {
-    margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #385c38;
+    font-family: 'Montserrat', sans-serif;
     color: white;
 }
 
-header {
+body {
+    background-image: url("../images/bg4.jpg");
+    background-size: 100%;
+    position: relative;
+}
+
+/* .layer {
+    background-color: rgba(117, 222, 124, 0.331);
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin: auto;
+    height: 100%;
+    z-index: 0;
+} */
+
+/* Main Div Wrapper */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/********************************/
+/************ Header ***********/
+
+header {
     margin-bottom: 15px;
-    padding: 20px;
-    background-color: transparent;
+    background-color: rgba(81, 211, 89, 0.92);
     border-bottom: solid 5px black;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 0px 5px black;
+    padding: 15px 0;
+}
+
+h1 {
+    padding: 10px 0;
+    color:  #184218;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
 }
 
 nav {
@@ -22,39 +57,40 @@ nav {
 
 nav li {
     display: inline;
-}
-
-h1 {
-    color:  #184218;
-    font-weight: bold;
-    text-align: center;
-    color: white;
+    padding-right: 10px;
+    font-weight: 600;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
 
 }
 
-.content {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
+/************************************/
+/************ Search/GPS ***********/
 
-.gps {
+.search-container {
     margin-bottom: 15px;
     padding: 1px;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: baseline;
     background-color: transparent;
+}
+
+.search-container p {
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+#zip {
+    width: 120px;
+}
+
+/* controls placeholder text for zip form */
+::placeholder {
+    color: rgba(81, 211, 89, 0.92);
 }
 
 .coord {
@@ -63,28 +99,32 @@ a {
     border-radius: 25px;
 }
 
-.mapBox {
-    clear: left;
-    margin: auto;
+
+.placeholder-map {
+    margin: 0 10%;
+    /* padding: 10px; */
 }
 
-.map {
-    margin: 0;
-    padding: 10px;
+/****************************************/
+/************ Search Results ***********/
+
+#results {
+    margin: 0 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-::placeholder {
-    color: white;
-}
-
-.container {
-    text-align: center;
-    margin: auto;
-    padding: 10px;
+.resultCard {
+    background-color: rgba(81, 211, 89, 0.92);
+    margin: 15px auto;
+    padding: 20px;
+    width: 100%;
     border: inset black;
     border-bottom: solid 5px black;
     box-shadow: 5px 5px 5px black;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 /***************************/
@@ -105,4 +145,4 @@ a {
   display: block;
 }
 
-/***************************/
+/************************* */
