@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link rel = "stylesheet"
     type = "text/css"
     href = "./assets/css/reset.css" />
@@ -13,6 +16,7 @@
     <title>ParkSharkNYC</title>
 </head>
 <body>
+    <div class="layer"></div>
     <header>
         <h1>ParkSharkNYC</h1>
         <nav>
@@ -22,23 +26,35 @@
     </header>
 
     <main class="content">
-        <div class="gps">
-            <button class="coord" id="gps">GPS</button>
-            <p class ="coord">or</p>
+        <div class="search-container">
+            <button class="coord button is-inverted is-small is-primary" id="gps">GPS</button>
+            <p class ="coord" id="or">or</p>
             <form class="coord">
                 <input type="text" id="zip" placeholder="Zip Code">
-                <button id="go">Go</button>
+                <button class="button is-inverted is-small is-primary" id="go">Go</button>
             </form>
         </div>
-        <div class="mapBox">
-            <img src="./assets/Map Placeholder.png" class="map">
+        <div class="placeholder-map">
+            <img src="./assets/Map Placeholder.png">
         </div>
         <div data-role="content" style="padding:0;">
             <div id="map" class="map-div"></div>
         </div>
-        <div class="container" id="results">
-            <div id="resultCard">
-                <p>Park name</p>
+        <div id="results">
+            <div class="resultCard">
+                <p>Matthew P. Sapolin Playground</p>
+                <p>Park address</p>
+                <p>Monuments: yes</p>
+                <p>Trails: yes</p>
+            </div>
+            <div class="resultCard">
+                <p>Eight Oaks Triangle</p>
+                <p>Park address</p>
+                <p>Monuments: yes</p>
+                <p>Trails: yes</p>
+            </div>
+            <div class="resultCard">
+                <p>Playground Sixty Two LXII</p>
                 <p>Park address</p>
                 <p>Monuments: yes</p>
                 <p>Trails: yes</p>
@@ -50,6 +66,5 @@
     <script src="assets/js/parksArray.js"></script>
     <script src="assets/js/maps.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/zipCodes.js"></script>
 </body>
 </html>
