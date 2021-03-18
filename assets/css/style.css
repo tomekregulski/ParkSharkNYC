@@ -44,46 +44,45 @@ body {
 /************ Header ***********/
 
 header {
-    font-size: 28px;
     margin-bottom: 15px;
     background-color: var(--primary-green);
     border-bottom: solid 5px black;
     box-shadow: 5px 0px 5px black;
     padding: 15px 0;
+    position: relative;
 }
-
+#logo {
+    height: 50px;
+    display: inline;
+    position: absolute;
+    left: 10px; /* added */
+    top: 20px; /* added */
+}
 h1 {
-    font-size: 48px;
     padding: 10px 0;
     color:  #184218;
+    font-size: 48px;
     font-weight: 600;
     text-align: center;
     color: white;
     font-family: 'Stick', sans-serif;
+    display: block;
 }
-
-nav {
-    list-style: none;
-    text-align: center;
-    margin-bottom: 15px;
-    background-color: hsla(162, 86%, 48%, 0.876);
-    box-shadow: 0px 10px 9px hsla(162, 88%, 16%, 0.876);
-}
-
 nav {
     list-style: none;
     text-align: center;
 }
-
+nav {
+    list-style: none;
+    text-align: center;
+}
 nav li {
     display: inline;
     padding-right: 10px;
     font-weight: 600;
 }
-
 a {
     color: white;
-
 }
 
 /************************************/
