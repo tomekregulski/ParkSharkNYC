@@ -12,7 +12,7 @@ zipSearch.addEventListener('click', zipCoord); //
 
 function createResults() {
     //render park names in div
-    for (var i = 0; i < 2; i++) {//parksArray.length
+    for (var i = 0; i < parkResults.length; i++) {//parksArray.length
         console.log("rendering div now")
         //create first p and so on...
         var nameList = document.createElement('p');
@@ -23,8 +23,8 @@ function createResults() {
         //console.log(parksArray[i])
         nameList.innerText = parksArray[i].name;
         address.innerText = parksArray[i].address;
-        monumentList.innerText = 'Monument available: ' + parksArray[i].monument
-        trailList.innerText = 'Trail available: ' + parksArray[i].trails
+        monumentList.innerText = 'Monuments: ' + parksArray[i].monument
+        trailList.innerText = 'Trails: ' + parksArray[i].trails
 
         //inside div, append each p
         var parksdiv = document.createElement("div");
@@ -34,11 +34,17 @@ function createResults() {
         parksdiv.appendChild(monumentList);
         parksdiv.appendChild(trailList);
         
-        parksdiv.setAttribute("class", "resultCard");
+        parksdiv.setAttribute("class", "panel has-background-primary-light resultCard");
+        nameList.setAttribute('class', 'panel-heading has-background-primary-dark has-text-primary-light');
+        address.setAttribute('class', 'subtitle-is-7 has-text-primary-dark has-text-left')
+        monumentList.setAttribute('class', 'control has-text-primary-dark has-text-left');
+        trailList.setAttribute('class', 'control has-text-primary-dark has-text-left');
+
 
         //inside div-container, append each div
         var resultEl = document.getElementById("results");
         resultEl.appendChild(parksdiv);
+        resultEl.setAttribute('class', 'box p-4');
     }
 }
 // pull coordinates for zip code

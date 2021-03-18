@@ -14,26 +14,6 @@ body {
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    /* position: relative; */ /* Not necessary unless we use the filter below */
-}
-
-/**** This is a test for a transparent layer over the background. It does not work properly at the moment, as it prevents the user from being able to click on the zip code search*****/
-/* .layer {
-    background-color: rgba(117, 222, 124, 0.331);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-} */
-
-/* Main Div Wrapper */
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 #main {
@@ -44,24 +24,23 @@ body {
 /************ Header ***********/
 
 header {
-    margin-bottom: 15px;
     background-color: var(--primary-green);
-    border-bottom: solid 5px black;
-    box-shadow: 5px 0px 5px black;
     padding: 15px 0;
     position: relative;
+    background-color: hsla(162, 86%, 48%, 0.876);
 }
+
 #logo {
     height: 50px;
     display: inline;
     position: absolute;
-    left: 10px; /* added */
-    top: 20px; /* added */
+    left: 10px;
+    top: 20px;
 }
 h1 {
     padding: 10px 0;
     color:  #184218;
-    font-size: 48px;
+    font-size: 30px;
     font-weight: 600;
     text-align: center;
     color: white;
@@ -75,6 +54,10 @@ nav {
 nav {
     list-style: none;
     text-align: center;
+    margin-bottom: 15px;
+    background-color: hsla(162, 86%, 48%, 0.876);
+    box-shadow: 0px 10px 10px hsla(162, 88%, 16%, 0.876);
+    border-bottom: solid 5px black;
 }
 nav li {
     display: inline;
@@ -100,12 +83,12 @@ a {
 /************ Search/GPS ***********/
 
 .search-container {
-    margin-top: 30px; /* added */
+    margin-top: 30px;
     padding: 1px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* updated */
-    align-items: center; /* updated */
+    justify-content: center; 
+    align-items: center; 
     background-color: transparent;
 }
 
@@ -115,22 +98,22 @@ a {
 }
 
 #gps {
-    padding: 15px; /* added */
-    border-radius: 15px; /* added */
+    padding: 15px;
+    border-radius: 15px;
 }
 #or {
-    margin: 10px 0 0 0; /* added */
-    font-size: 20px; /* added */
+    margin: 10px 0 0 0;
+    font-size: 20px;
 }
 #zip {
-    width: 150px; /* added */
-    margin: 10px 15px 0 0; /* added */
+    width: 150px;
+    margin: 10px 15px 0 0;
     display: inline-flex;
-    border-radius: 15px; /* added */
+    border-radius: 15px;
 }
 #go {
-    margin: 10px 0 0 0; /* added */
-    border-radius: 15px; /* added */
+    margin: 10px 0 0 0;
+    border-radius: 15px;
 }
 /* controls placeholder text for zip form */
 ::placeholder {
@@ -145,8 +128,8 @@ a {
 }
 
 .placeholder-map {
-    margin: 0 auto; /* added */
-    padding: 10px; /* added */
+    margin: 0 auto;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -154,8 +137,8 @@ a {
 }
 .placeholder-map img {
     /* height: 400px; */
-    width: 90%; /* updated */
-    margin: 30px auto 0; /* added */
+    width: 90%; 
+    margin: 30px auto 0;
 } 
 /****************************************/
 /************ Search Results ***********/
@@ -200,64 +183,74 @@ a {
 }
 /************************* */
 
-@media screen and (min-width: 500px) { /* updated */
-    #logo {
-        left: 20px; /* added */
+@media screen and (min-width: 500px) { 
+    
+    h1 {
+        font-size: 48px;
     }
-    .search-container { /* updated */
-        flex-direction: row; /* updated */
-        align-items: baseline; /* updated */
-    } /* updated */
-    #or {
-        margin: 0 5px; /* added */
-    }
-    #zip {
-        margin: 0 15px 0 0; /* added */
-    }
-    #go {
-        margin: 0; /* added */
-    }
-    .placeholder-map img  {
-        width: 90%; /* updated */
-    }
-} /* updated */
 
-@media screen and (min-width: 800px) { /* updated */
+    #logo {
+        left: 20px;
+    }
+
+    .search-container { 
+        flex-direction: row; 
+        align-items: baseline; 
+    }
+
+    #or {
+        margin: 0 5px;
+    }
+
+    #zip {
+        margin: 0 15px 0 0;
+    }
+
+    #go {
+        margin: 0;
+    }
+
+    .placeholder-map img  {
+        width: 90%; 
+    }
+}
+
+@media screen and (min-width: 800px) { 
     .search-container {
-        margin-top: 40px; /* added */
+        margin-top: 40px;
     }
     #map {
-        width: 80%; /* updated */
-        margin: 70px auto 0; /* added */
+        width: 80%; 
+        margin: 70px auto 0;
     }
     #results {
-        margin: 70px 10% 0; /* added */
+        margin: 70px 10% 0;
     }
-} /* updated */
-@media screen and (min-width: 1200px) { /* updated */
+} 
+@media screen and (min-width: 1200px) { 
     .search-container {
-        margin-top: 50px; /* added */
+        margin-top: 50px;
     }
     #map {
-        height: 600px; /* added */
-        width: 70%; /* updated */
-        margin: 80px auto 0; /* added */
+        height: 600px;
+        width: 70%; 
+        margin: 80px auto 0;
     }
     #results {
-        margin: 80px 10% 0; /* added */
+        margin: 80px 10% 0;
     }
     .resultCard {
         width: 80%;
     }
-} /* updated */
-@media screen and (min-width: 1400px) { /* updated */
+} 
+@media screen and (min-width: 1400px) { 
     #map {
-        height: 700px; /* added */
+        height: 700px;
     }
     .resultCard {
         width: 70%;
     }
-@media screen and (min-width: 1600px) { /* updated */
+@media screen and (min-width: 1600px) { 
     .resultCard {
         width: 60%;
     }

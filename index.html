@@ -18,14 +18,18 @@
     <title>ParkSharkNYC</title>
 </head>
 <body>
-    <div class="layer"></div>
     <header>
-        <h1>ParkSharkNYC</h1>
-        <nav>
-            <li><a href="#">Plan</a></li>
-            <li><a href="./journal.html">Journal</a></li>
-        </nav>
+        <div>
+            <img id='logo' src="assets/Logo.png">
+        </div>
+        <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
     </header>
+
+    <nav class="tabs is-fullwidth">
+        <li><a href="#" class="has-text-primary-dark is-size-4"></span>Home</a></li>
+        <li class="is-active"><a href="./journal.html" class="has-text-primary-light is-focused is-size-4">Journal</a></li>
+    </nav>
+
     <main class="content">
         <div class="search-container">
             <button class="coord button is-primary is-inverted is-big " id="gps">Search Nearby</button>
@@ -41,8 +45,8 @@
         <div data-role="content" style="padding:0;">
             <div id="map" class="map-div"></div>
         </div>
-        <div class="box p-4" id="results">
-                <div class="panel has-background-primary-light resultCard">
+        <div id="results">
+                <!-- <div class="panel has-background-primary-light resultCard">
                     <p class="panel-heading has-background-primary-dark has-text-primary-light">Matthew P. Sapolin Playground</p>
                     <div class="panel-block">
                         <p class="subtitle-is-7 has-text-primary-dark has-text-left">Park address</p>
@@ -66,7 +70,7 @@
                         <p class="subtitle-is-7 has-text-primary-dark has-text-left">Park address</p>
                     </div>
                     <div class="panel-block">
-                        <p class="control has-text-primary-dark has-text-left">Monuments: yes Trails: yes</p>
+                        <p class="control has-text-primary-dark has-text-left">Monuments: yes Trails: yes</p> -->
                     </div>
                 </div>
             </div>

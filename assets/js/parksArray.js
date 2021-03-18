@@ -4,7 +4,7 @@ var parksWithTrails = [];
 var parksWithMonuments = [];
 
 // initialize building parksArray by starting with trails
-// getParkTrails();
+getParkTrails();
 
 function getParkTrails() {
 
