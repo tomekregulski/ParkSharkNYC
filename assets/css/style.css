@@ -36,6 +36,10 @@ body {
     justify-content: center;
 }
 
+#main {
+    padding-bottom: 15px;
+}
+
 /********************************/
 /************ Header ***********/
 
@@ -85,6 +89,10 @@ a {
     margin-bottom: 15px;
 }
 
+.resultCard {
+    width: 240px;
+}
+
 /************************************/
 /************ Search/GPS ***********/
 
@@ -129,7 +137,7 @@ a {
 /************ Search Results ***********/
 
 #results {
-    margin: 0 15px;
+    margin: 0 15px 30px 15px;;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -140,12 +148,12 @@ a {
 .resultCard {
     background-color: var(--primary-green);
     margin: 15px auto;
-    padding: 20px;
+    padding: 4px;
     width: 100%;
-    border: inset black;
-    border-bottom: solid 5px black;
-    box-shadow: 5px 5px 5px black;
-    border-radius: 15px;
+    border: inset hsla(170, 94%, 6%, 0.876);
+    border-bottom: solid 5px hsla(170, 94%, 6%, 0.876);
+    box-shadow: 5px 5px 5px hsla(170, 94%, 6%, 0.876);
+    border-radius: 10px;
 }
 
 /***************************/
