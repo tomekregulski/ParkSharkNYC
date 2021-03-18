@@ -54,6 +54,7 @@ h1 {
     font-weight: 600;
     text-align: center;
     color: white;
+    font-family: 'Stick', sans-serif;
 }
 
 nav {
@@ -92,6 +93,7 @@ a {
 
 #zip {
     width: 120px;
+    display: inline-flex;
 }
 
 /* controls placeholder text for zip form */
@@ -103,6 +105,7 @@ a {
     margin: 0;
     padding: 5px;
     border-radius: 25px;
+    display: inline-flex;
 }
 
 
@@ -150,5 +153,4 @@ a {
 .map-div.show {
   display: block;
 }
-
 /************************* */

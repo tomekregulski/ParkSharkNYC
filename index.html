@@ -13,6 +13,8 @@
     <link rel = "stylesheet"
     type = "text/css"
     href = "./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
     <title>ParkSharkNYC</title>
 </head>
 <body>
@@ -27,11 +29,12 @@
 
     <main class="content">
         <div class="search-container">
-            <button class="coord button is-inverted is-small is-primary" id="gps">GPS</button>
+            <button class="coord button is-primary is-inverted is-big " id="gps">GPS</button>
             <p class ="coord" id="or">or</p>
             <form class="coord">
-                <input type="text" id="zip" placeholder="Zip Code">
-                <button class="button is-inverted is-small is-primary" id="go">Go</button>
+                <input class="input is-primary is-inverted is-big" type="text" id="zip" placeholder="Zip Code">
+                &nbsp;&nbsp;
+                <button class="button is-primary is-inverted is-big" id="go">Go</button>
             </form>
         </div>
         <div class="placeholder-map">
