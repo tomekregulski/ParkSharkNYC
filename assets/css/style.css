@@ -114,30 +114,23 @@ a {
     font-weight: 600;
 }
 
-#zip {
-    width: 150px;
-    display: inline-flex;
-    border-radius: 15px;
-
-}
-
 #gps {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 15px;
+    padding: 15px; /* added */
+    border-radius: 15px; /* added */
 }
-
 #or {
-    font-size: 23px;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin: 10px 0 0 0; /* added */
+    font-size: 20px; /* added */
 }
-
+#zip {
+    width: 150px; /* added */
+    margin: 10px 15px 0 0; /* added */
+    display: inline-flex;
+    border-radius: 15px; /* added */
+}
 #go {
-    border-radius: 15px;
-    margin-left: 5px;
+    margin: 10px 0 0 0; /* added */
+    border-radius: 15px; /* added */
 }
 /* controls placeholder text for zip form */
 ::placeholder {
