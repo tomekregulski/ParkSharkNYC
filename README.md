@@ -1,5 +1,7 @@
 # ParkSharkNYC
 
+Go to the deployed application here: <div style="display: inline">https://ladystephani.github.io/ParkSharkNYC/</div>
+
 * [Team Members](#team-members)
 * [Description ](#description)
 * [Technical Notes](#technical-notes)
@@ -7,7 +9,7 @@
 * [License](#license)
 
 ## Team Member
-Jessie Li
+Zhe Qi (Jessie) Li
 Samy Ozuna
 Sean Weber
 Tomek Regulski
