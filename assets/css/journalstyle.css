@@ -86,11 +86,9 @@ label {
     margin-bottom: 5px;
 }
 
-form {
-    width: 305px;
-}
-
 footer {
+    position: fixed;
+    bottom: 0;
     height: 50px;
     width: 100%;
 }
@@ -137,6 +135,10 @@ footer {
     width: 335px;
 }
 
+#myForm {
+    width: 305px;
+}
+
 #park-name, #date-visited {
     width: 135px;
     padding: 2px;
@@ -162,6 +164,11 @@ footer {
     right: 18px;
     top: 5px;
     white-space: nowrap;
+}
+
+#modalCard {
+    margin: 100px auto 0 auto;
+    width: 300px;
 }
 
 tr>:nth-child(1) { 
@@ -250,14 +257,46 @@ tr>:nth-child(3) {
 
 /* Media queries */
 
-@media (min-width: 320px) {
-    table {
-        width: 240px;
+@media (min-width: 400px) {
+    #container {
+        width: 360px;
     }
-    .input, .save, #save {
-        width: 280px;
+    #myForm {
+        width: 330px;
     }
-    textarea {
-        width: 274px;
+}
+
+@media (min-width: 500px) {
+    #container {
+        width: 460px;
+    }
+    #myForm {
+        width: 430px;
+    }
+}
+
+@media (min-width: 700px) {
+    #container {
+        width: 660px;
+        margin-top:200px;
+    }
+    #myForm {
+        width: 630px;
+    }
+}
+
+@media (min-width: 900px) {
+    header {
+        height: 150px;
+    }
+    h1 {
+        margin-top: 50px;
+    }
+    #container {
+        width: 860px;
+        margin-top:300px;
+    }
+    #myForm {
+        width: 830px;
     }
 }

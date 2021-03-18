@@ -3,8 +3,8 @@ var memJSON = localStorage.getItem("memories");
 
 var savedMem = [];
 
-console.log(memJSON);
-console.log(savedMem)
+//console.log(memJSON);
+//console.log(savedMem);
 
 //sorts objects in array by property
 function sortByProperty(prop) {
@@ -22,24 +22,24 @@ function sortByProperty(prop) {
 var slider = document.getElementById("slider");
 
 var isChecked = slider.checked;
-console.log(isChecked);
+//console.log(isChecked);
 
 slider.addEventListener('change', function() {
     savedMem = JSON.parse(memJSON);
     if (isChecked === true) {
         savedMem.sort(sortByProperty("Date"));
-        console.log(savedMem);
+        //console.log(savedMem);
         loadMemories ();
         isChecked = false;
         saveCheck();
-        console.log(isChecked);
+        //console.log(isChecked);
     } else {
         savedMem.sort(sortByProperty("Name"));
-        console.log(savedMem);
+        //console.log(savedMem);
         loadMemories ();
         isChecked = true;
         saveCheck();
-        console.log(isChecked);
+        //console.log(isChecked);
     }
 });
 
@@ -52,6 +52,10 @@ window.onload = function() {
     savedMem = JSON.parse(localStorage.getItem("memories"));
     while (savedMem === null) {
         savedMem = [];
+        var noSaved = document.getElementById("noSaved");
+        var clearBtn = document.getElementById("clearBtn");
+        noSaved.style.display = "block";
+        clearBtn.style.display ="none";
     };
     if (isChecked === true) {
         savedMem.sort(sortByProperty("Park"));
@@ -69,22 +73,22 @@ rawMem = [];
 //loads table of saved memories
 function loadMemories () {
 
-    console.log(savedMem);
+    //console.log(savedMem);
 
     //takes sortMem JSON and converts it to JS object with dates as objects
     rawMem = JSON.stringify(savedMem)
     var sortMem = JSON.parse(rawMem, function (key, value) {
-    if (key == "Date") {
-        var dateObj = new Date(value);
-        console.log(dateObj);
-        var newDate = moment(dateObj).format("ll");
-        return newDate;
-      } else {
-        return value;
-      }
-});
+        if (key == "Date") {
+            var dateObj = new Date(value);
+            //console.log(dateObj);
+            var newDate = moment(dateObj).format("ll");
+            return newDate;
+        } else {
+            return value;
+        }
+    });
     
-    console.log(sortMem);
+    //console.log(sortMem);
 
     //extracts values for table header
     var col = [];
@@ -96,7 +100,7 @@ function loadMemories () {
         }
     }
 
-    console.log(col);
+    //console.log(col);
 
     //creates table
     var table = document.createElement("table");
@@ -139,16 +143,11 @@ var s = document.getElementById("memBtn");
 
 //shows and hides the memories table on button click
 function show() {
-    if (savedMem == ""){
-        alert("You have no saved memories.");
-        return false;
-    } else {
-        x.style.display = "block";
-        y.style.display = "none";
-        z.style.display = "block";
-        w.innerHTML = "back";
-        s.style.display = "none";
-    }
+    x.style.display = "block";
+    y.style.display = "none";
+    z.style.display = "block";
+    w.innerHTML = "back";
+    s.style.display = "none";
   };
 
 function hide () {
@@ -161,11 +160,8 @@ function hide () {
 
 //clears memories
 function clearMem () {
-    var warning = confirm("WARNING! You are about to erase all of your saved data. This cannot be undone. Do you want to proceed?");
-    if (warning === true){
         localStorage.clear("memories");
         location.reload();
-    } else {
-        return false;
-    }
 };
+
+console.log("Thanks for stopping by :)")
