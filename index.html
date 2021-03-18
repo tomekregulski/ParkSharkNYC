@@ -20,48 +20,60 @@
 <body>
     <div class="layer"></div>
     <header>
-        <h1>ParkSharkNYC</h1>
-        <nav>
-            <li><a href="#">Plan</a></li>
-            <li><a href="./journal.html">Journal</a></li>
-        </nav>
+        <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
     </header>
+    
+    <nav class="tabs is-fullwidth">
+        <li><a href="./index.html" class="has-text-primary-light is-focused is-size-4">Home</a></li>
+        <li class="is-active"><a href="./journal.html" class="has-text-primary-dark is-size-4">Journal</a></li>
+    </nav>
 
     <main class="content">
         <div class="search-container">
-            <button class="coord button is-primary is-inverted is-big " id="gps">GPS</button>
+            <button class="coord button is-primary is-inverted is-big is-rounded" id="gps">GPS</button>
             <p class ="coord" id="or">or</p>
             <form class="coord">
-                <input class="input is-primary is-inverted is-big" type="text" id="zip" placeholder="Zip Code">
+                <input class="input is-primary is-inverted is-big is-rounded" type="text" id="zip" placeholder="Zip Code">
                 &nbsp;&nbsp;
-                <button class="button is-primary is-inverted is-big" id="go">Go</button>
+                <button class="button is-primary is-inverted is-big is-rounded" id="go">Go</button>
             </form>
         </div>
-        <div class="placeholder-map">
-            <img src="./assets/Map Placeholder.png">
-        </div>
-        <div data-role="content" style="padding:0;">
-            <div id="map" class="map-div"></div>
-        </div>
-        <div id="results">
-            <div class="resultCard">
-                <p>Matthew P. Sapolin Playground</p>
-                <p>Park address</p>
-                <p>Monuments: yes</p>
-                <p>Trails: yes</p>
+        <div class="box p-4" id="results">
+            <div class="card-image"><img src="./assets/Map Placeholder.png">
             </div>
-            <div class="resultCard">
-                <p>Eight Oaks Triangle</p>
-                <p>Park address</p>
-                <p>Monuments: yes</p>
-                <p>Trails: yes</p>
+            <div data-role="content" style="padding:0;">
+                <div id="map" class="map-div"></div>
             </div>
-            <div class="resultCard">
-                <p>Playground Sixty Two LXII</p>
-                <p>Park address</p>
-                <p>Monuments: yes</p>
-                <p>Trails: yes</p>
-            </div>
+                <div class="panel has-background-primary-light resultCard">
+                    <p class="panel-heading has-background-primary-dark has-text-primary-light">Matthew P. Sapolin Playground</p>
+                    <div class="panel-block">
+                        <p class="subtitle-is-7 has-text-primary-dark has-text-left">Park address</p>
+                    </div>
+                    <div class="panel-block">
+                        <p class="control has-text-primary-dark has-text-left">Monuments: yes Trails: yes</p>
+                    </div>
+                </div>
+                <div class="panel has-background-primary-light resultCard">
+                    <p class="panel-heading has-background-primary-dark has-text-primary-light">Eight Oaks Triangle</p>
+                    <div class="panel-block">
+                        <p class="subtitle-is-7 has-text-primary-dark has-text-left">Park address</p>
+                    </div>
+                    <div class="panel-block">
+                        <p class="control has-text-primary-dark has-text-left">Monuments: yes Trails: yes</p>
+                    </div>
+                </div>
+                <div class="panel has-background-primary-light resultCard">
+                    <p class="panel-heading has-background-primary-dark has-text-primary-light">Playground Sixty Two LXII</p>
+                    <div class="panel-block">
+                        <p class="subtitle-is-7 has-text-primary-dark has-text-left">Park address</p>
+                    </div>
+                    <div class="panel-block">
+                        <p class="control has-text-primary-dark has-text-left">Monuments: yes Trails: yes</p>
+                    </div>
+                </div>
+                </div>
+
+            
         </div>
     </main>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY-HERE" async></script> -->

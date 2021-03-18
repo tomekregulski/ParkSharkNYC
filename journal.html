@@ -4,65 +4,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParkSharkNYC | Journal</title>
-    <link href="./assets/css/journal.css" rel="stylesheet">
-    <script src="assets/js/moment.js" defer></script>
+    <title>ParkSharkNYC | Journal</title> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "./assets/css/reset.css" />
+    <link rel = "stylesheet"
+    type = "text/css"
+    href = "./assets/css/journalstyle.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+    <link href="./assets/fontawesome-free-5.15.2-web/fontawesome-free-5.15.2-web/css/min.css">
+    
+    <script src="assets/js/moment.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <!--title and page links-->
-    <header>
-        <h1>ParkSharkNYC</h1>
-        <nav>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="#">Journal</a></li>
-        </nav>
+    <header #id="reset">
+        <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
     </header>
+    
+    <nav class="tabs is-fullwidth">
+        <li><a href="./index.html" class="has-text-primary-dark is-size-4"></span>Home</a></li>
+        <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4">Journal</a></li>
+    </nav>
 
     <!--main content container-->
-    <main class="content">
-        <!--journal form-->
-        <div class="container">
+    <main class="content" id="mainBody">
+
+        <!--save form-->
+        <div class="panel" id="container">
+            <p class="tabs is-fullwidth">
+                <a class="has-text-primary-light has-text-weight-bold" id="saveBtn" onclick="hide()"><i class="fas fa-leaf has-background-primary-light"></i></a>
+                <a class="has-text-primary-light has-text-weight-bold is-boxed" id="memBtn" onclick="show()">Memories</a>
+            </p>
             <form id="myForm">
-                <div class="input">
-                    <label for="park-name">Park Name</label>
-                    <br>
-                    <input type="text" name="Park Name" id="park-name" placeholder="required">
+                <div class="field">
+                    <label class="label has-text-primary-light has-text-weight-bold" for="Park Name">Park Name</label>
+                    <div class="control"><input class="input is-primary is-small is-fullwidth has-text-primary-dark" id="parkInput" type="text" placeholder="required" name="Name"></div>
                 </div>
-                <div class="input">
-                    <label for="date-visited">Date Visited</label>
-                    <br>
-                    <input type="date" name="Date" id="date-visited">
+                <div class="field">
+                    <label class="label has-text-primary-light has-text-weight-bold" for="Date">Date Visited</label>
+                    <div class="control"><input class="input is-primary is-small is-fullwidth has-text-primary-dark" type="date" id="date-visited" name="Date"></div>
                 </div>
-                <div class="input">
-                    <label for="saving-notes">Notes:</label>
-                    <br>
-                    <textarea name="Notes" id="saving-notes" placeholder="optional"></textarea>
+                <div class="field">
+                    <label class="label has-text-primary-light has-text-weight-bold" for="Notes">Notes</label>
+                    <div class="control"><textarea class="textarea is-primary is-small is-fullwidth has-text-primary-dark" type="textarea" id="textarea" placeholder="optional" name="Notes"></textarea></div>
                 </div>
-                <div class="save"><button type="submit" id="save">Save</button></div>
+                <br>
+                <button class="button is-primary is-outlined is-fullwidth" type="submit" id="saveForm">Save</button>
             </form>
-        </div>
 
-        <!--memories table-->
-        <div>
-            <p id="showData" style="display:none;">
-              </label></p>
-            <div class="showBtn">
-                <button type="button" id="show" onclick="showHide()">Show Memories</button>
+            <!--memories table-->
+            <div  id="memPanel" hidden>
+                <p id="showData"></p>
+                <p class="has-text-primary-light has-text-weight-bold is-size-6 has-text-centered m-2" id="noSaved" hidden>You have no saved memories.</p>
             </div>
+            
         </div>
-
     </main>
 
-    <!--clear button and sort toggle-->
+    <!-- Modals -->
+    <div class="modal fade is-small" id="clearModal" role="dialog">
+        
+        <div class="modal-dialog">
+            <div class="modal-background" onclick="location.reload();"></div>
+                <div class="modal-card" id="modalCard">
+                <header class="modal-card-head has-background-danger"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Heads up!</p></header>
+                <section class="modal-card-body">
+                <p class="has-text-danger-dark is-small">You are about to erase all of your saved data. This cannot be undone. Do you want to proceed?</p></section>
+                <section class="modal-card-foot p-2"><button class="button is-primary-light m1" onclick="location.reload();">Cancel</button><button class="button is-danger m1" onclick="clearMem()">Confirm</button>
+                </section>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
+    </div>
+
+    <div class="modal fade is-small" id="inputModal" role="dialog">
+        
+        <div class="modal-dialog">
+            <div class="modal-background" onclick="location.reload();"></div>
+                <div class="modal-card" id="modalCard">
+                <header class="modal-card-head has-background-primary"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Uh oh!</p></header>
+                <section class="modal-card-body">
+                <p class="has-text-primary-dark is-small">You did not enter a park name or date. Please do so and try again!</p></section>
+                <section class="modal-card-foot p-2"><button class="button is-light m1" onclick="location.reload();">Ok</button>
+                </section>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
+    </div>
+
     <footer>
-            <label id="clearBtn">
-                <button type="button" class="clear" onclick="clearMem()" hidden><span id="x">X</span></button>
-            </label>
-            <h4 hidden>clear data</h4>
+        <!--clear button and sort toggle-->
+        <div id="clearSort" hidden>
+            <div class="block" id="clearBtn">
+                <span type=button id="clear" data-target="#clearModal" data-toggle="modal" class="tag is-danger">
+                  Clear Data
+                  <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
+                </span>
+              </div>
             <label class="switch">
-                <input type="checkbox" class="invis">
-                <span class="slider round" hidden></span>
+                <input type="checkbox" class="invis" id="slider">
+                <span class="slider round" id="slider round"></span>
+                <h4 class="has-text-primary-light is-size-6">sort</h4>
             </label>
+            
+        </div>
     </footer>
     <!--JS links-->
     <script src="./assets/js/table.js"></script>
