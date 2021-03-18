@@ -1,0 +1,260 @@
+/********************************/
+/******** Body/Background *******/
+:root {
+    --primary-green: rgba(81, 211, 139, 0.92);
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url("../images/bg4.jpg");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* position: relative; */ /* Not necessary unless we use the filter below */
+}
+
+/**** This is a test for a transparent layer over the background. It does not work properly at the moment, as it prevents the user from being able to click on the zip code search*****/
+/* .layer {
+    background-color: rgba(117, 222, 124, 0.331);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+} */
+
+/* Main Div Wrapper */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/********************************/
+/************ Header ***********/
+
+header {
+    background-color: hsla(162, 86%, 48%, 0.876);
+    padding: 15px 0;
+}
+
+h1 {
+    padding: 10px 0;
+    color:  #184218;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    font-family: 'Stick', sans-serif;
+}
+
+h4 {
+    position: relative;
+    left: 8px;
+    top: 1px;
+    font-weight: bold;
+}
+
+nav {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: hsla(162, 86%, 48%, 0.876);
+    box-shadow: 0px 10px 10px hsla(162, 88%, 16%, 0.876);
+}
+
+nav li {
+    display: inline;
+    padding-right: 10px;
+    font-weight: 600;
+}
+
+a {
+    color: white;
+}
+
+/* Main body */
+
+label {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+form {
+    width: 305px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navLink {
+    box-shadow: inset 0 0 10px rgba(156, 238, 206, 0.883)1, 94%, 19%, 0.876);
+}
+
+.container {
+    margin-top: 115px
+}
+
+.panel {
+    background-color: hsla(171, 94%, 19%, 0.876);
+    padding: 15px;
+}
+
+.tab {
+    text-decoration: none;
+}
+
+.save {
+    width: 240px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clearSort {
+    background-color: rgba(24, 61, 41, 0.92);
+    position: fixed;
+    bottom: 0;
+    width: 335px;
+}
+
+.switch {
+    float: left;
+    left: 25px;
+    top: 9px;
+}
+
+#container {
+    width: 335px;
+}
+
+#park-name, #date-visited {
+    width: 135px;
+    padding: 2px;
+}
+
+#textarea {
+    width: 120px;
+}
+
+#save {
+    width: 240px;
+}
+
+#showData {
+    max-height: 450px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#clearBtn {
+    float: right;
+    position: relative;
+    right: 18px;
+    top: 5px;
+    white-space: nowrap;
+}
+
+tr>:nth-child(1) { 
+    Width: 28%;
+    }
+
+tr>:nth-child(3) { 
+    Width: 50%;
+    }
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+  }
+
+  .clear {
+        background: rgb(255, 0, 0);
+        color: #fff;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        border: 0px;
+        border-radius: 5px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .invis {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(204, 204, 204, 0.87);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: hsla(162, 86%, 48%, 0.876);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px hsla(162, 86%, 48%, 0.876);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 17px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* Media queries */
+
+@media (min-width: 320px) {
+   
+}
+
+@media (min-width: 400px) {
+    
+}
