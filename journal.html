@@ -34,7 +34,7 @@
     </nav>
 
     <!--main content container-->
-    <main class="content">
+    <main class="content" id="mainBody">
 
         <!--save form-->
         <div class="panel" id="container">
@@ -73,13 +73,15 @@
             <div class="block" id="clearBtn">
                 <span class="tag is-danger">
                   Clear Data
-                  <button class="delete is-small" id="clear" onclick="clearMem()""></button>
+                  <button class="delete is-small" id="clear" onclick="clearMem()"></button>
                 </span>
               </div>
             <label class="switch">
                 <input type="checkbox" class="invis" id="slider">
                 <span class="slider round" id="slider round"></span>
+                <h4 class="has-text-primary-light is-size-6">sort</h4>
             </label>
+            
         </div>
     </footer>
     <!--JS links-->

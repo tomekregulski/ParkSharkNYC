@@ -63,7 +63,7 @@ nav {
     text-align: center;
     margin-bottom: 15px;
     background-color: hsla(162, 86%, 48%, 0.876);
-    box-shadow: 0px 10px 10px hsla(162, 88%, 16%, 0.876);
+    box-shadow: 0px 10px 9px hsla(162, 88%, 16%, 0.876);
 }
 
 nav {
