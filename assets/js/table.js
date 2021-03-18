@@ -139,7 +139,7 @@ var x = document.getElementById("memPanel");
 var y = document.getElementById("myForm");
 var z = document.getElementById("clearSort");
 var w = document.getElementById("saveBtn");
-var s = document.getElementById("memBtn");
+var s = document.getElementById("memBtnBox");
 
 //shows and hides the memories table on button click
 function show() {
