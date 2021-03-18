@@ -146,19 +146,24 @@ a {
 
 .coord {
     margin: 0;
-    margin-top: 5px;
     padding: 5px;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     display: inline-flex;
 }
 
-
 .placeholder-map {
-    margin: 0 10%;
-    margin-top: 5px;
-    /* padding: 10px; */
+    margin: 0 auto; /* added */
+    padding: 10px; /* added */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
+.placeholder-map img {
+    /* height: 400px; */
+    width: 90%; /* updated */
+    margin: 30px auto 0; /* added */
+} 
 /****************************************/
 /************ Search Results ***********/
 
