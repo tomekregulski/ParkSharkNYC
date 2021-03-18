@@ -86,10 +86,6 @@ label {
     margin-bottom: 5px;
 }
 
-table {
-    border-radius: 5px;
-}
-
 footer {
     position: fixed;
     bottom: 0;
@@ -160,6 +156,7 @@ footer {
     max-height: 450px;
     overflow: scroll;
     overflow-x: hidden;
+    border-radius: 5px;
 }
 
 #clearBtn {
@@ -298,7 +295,7 @@ tr>:nth-child(3) {
     }
     #container {
         width: 860px;
-        margin-top:300px;
+        margin-top:200px;
     }
     #myForm {
         width: 830px;
