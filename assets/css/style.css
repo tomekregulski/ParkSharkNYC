@@ -100,11 +100,12 @@ a {
 /************ Search/GPS ***********/
 
 .search-container {
-    margin-bottom: 15px;
+    margin-top: 30px; /* added */
     padding: 1px;
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    flex-direction: column;
+    justify-content: center; /* updated */
+    align-items: center; /* updated */
     background-color: transparent;
 }
 
@@ -200,3 +201,25 @@ a {
   display: block;
 }
 /************************* */
+
+@media screen and (min-width: 500px) { /* updated */
+    #logo {
+        left: 20px; /* added */
+    }
+    .search-container { /* updated */
+        flex-direction: row; /* updated */
+        align-items: baseline; /* updated */
+    } /* updated */
+    #or {
+        margin: 0 5px; /* added */
+    }
+    #zip {
+        margin: 0 15px 0 0; /* added */
+    }
+    #go {
+        margin: 0; /* added */
+    }
+    .placeholder-map img  {
+        width: 90%; /* updated */
+    }
+} /* updated */
