@@ -8,11 +8,11 @@ Go to the deployed application here: <div style="display: inline">https://ladyst
 * [Installation and Usage](#installation-and-use)
 * [License](#license)
 
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo1.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo2.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo3.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo4.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo5.png]
+![Screenshot-1](assets/images/demo1.png)
+![Screenshot-2](assets/images/demo2.png)
+![Screenshot-3](assets/images/demo3.png)
+![Screenshot-4](assets/images/demo4.png)
+![Screenshot-5](assets/images/demo5.png)
 
 ## Team Members
 Zhe Qi (Jessie) Li
