@@ -8,13 +8,14 @@ Go to the deployed application here: <div style="display: inline">https://ladyst
 * [Installation and Usage](#installation-and-use)
 * [License](#license)
 
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo1.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo2.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo3.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo4.png]
-![https://github.com/ladystephani/ParkSharkNYC/assets/images/demo5.png]
+![Screenshot-1](assets/images/demo1.png)
+![Screenshot-2](assets/images/demo2.png)
+![Screenshot-3](assets/images/demo3.png)
+![Screenshot-4](assets/images/demo4.png)
+![Screenshot-5](assets/images/demo5.png)
 
 ## Team Members
+
 Zhe Qi (Jessie) Li
 Samy Ozuna
 Sean Weber
@@ -36,7 +37,7 @@ This app makes use of HTML, CSS, JavaScript, Bulma, Google Maps API, and NYC Ope
 
 The NYC Open Data APIs that we used are Park Properties, Trails, and Monuments. When the app first loads, a function is triggered to make a request to the Park Properties API, collects the names, addresses, and coordinates of the parks, and stores them in the local array 'parksArray'. 
 
-Once that process has completed, requests are made to the Trails and Monuments APIs to retrieve the names of parks that contain either of these features, and those results are integrated with parksArray. This new local array of parknames and features is then run through a function that compares their coordinates with those of the user's search. The parks that fall within a mile of the search coordinates are pushed to a new array "parkResults", which is used to create markers on the map and to render the search result cards. 
+Once this process has completed, requests are made to the Trails and Monuments APIs to retrieve the names of parks that contain either of these features, and those results are integrated with parksArray. This new local array of parknames and features is then run through a function that compares their coordinates with those of the user's search. The parks that fall within a mile of the search coordinates are pushed to a new array "parkResults", which is used to create markers on the map and to render the search result cards. 
 
 The Google Maps API is used to display an area, centered on the search coordinates, and show markers for each park that was returned in the search results. 
 
