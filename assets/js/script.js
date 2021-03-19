@@ -79,10 +79,10 @@ function createResults() {
         var address = document.createElement('p');
         var monumentList = document.createElement('p');
         var trailList = document.createElement('p');
-        nameList.innerText = parksArray[i].name;
-        address.innerText = parksArray[i].address;
-        monumentList.innerText = 'Monuments: ' + parksArray[i].monument
-        trailList.innerText = 'Trails: ' + parksArray[i].trails
+        nameList.innerText = parkResults[i].name;
+        address.innerText = parkResults[i].address;
+        monumentList.innerText = 'Monuments: ' + parkResults[i].monument
+        trailList.innerText = 'Trails: ' + parkResults[i].trails
 
         //append and apply styling
         var parksdiv = document.createElement("div");
