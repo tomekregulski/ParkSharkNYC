@@ -11,22 +11,10 @@
 
 body {
     background-image: url("../images/bg4.jpg");
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* position: relative; */ /* Not necessary unless we use the filter below */
 }
-
-/**** This is a test for a transparent layer over the background. It does not work properly at the moment, as it prevents the user from being able to click on the zip code search*****/
-/* .layer {
-    background-color: rgba(117, 222, 124, 0.331);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-} */
 
 /* Main Div Wrapper */
 .content {
