@@ -136,14 +136,13 @@ a {
 
 .placeholder-map {
     margin: 0 auto;
-    /* padding: 10px; */
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .placeholder-map img {
-    /* width: 50%;  */
     margin: 30px auto ;
 } 
 
@@ -298,12 +297,12 @@ a {
 
     #map {
         width: 80%; 
-        margin: 70px auto 0;
+        margin: 50px auto 0;
     }
 
     .placeholder-map img  {
         width: 80%; 
-        margin: 70px auto 0;
+        margin: 50px auto 0;
     }
 
     #results {
@@ -334,12 +333,12 @@ a {
     #map {
         height: 600px;
         width: 70%; 
-        margin: 80px auto 0;
+        margin: 50px auto 0;
     }
 
     .placeholder-map img  {
         width: 70%; 
-        margin: 80px auto 0;
+        margin: 50px auto 0;
     }
 
     #results {
@@ -360,11 +359,30 @@ a {
     #results {
         margin: 80px 15% 0;
     }
+
+    .placeholder-map img  {
+        margin: 60px auto 0;
+    }
+
+    #map {
+        margin: 60px auto 0;
+    }
 }
 
 @media screen and (min-width: 1600px) { 
     
     #results {
         margin: 80px 20% 0;
+    }
+}
+
+@media screen and (min-width: 1700px) { 
+
+    .placeholder-map img  {
+        margin: 70px auto 0;
+    }
+
+    #map {
+        margin: 70px auto 0;
     }
 }
