@@ -24,40 +24,37 @@ body {
 /************ Header ***********/
 
 header {
-    background-color: var(--primary-green);
+    background-color: hsla(162, 86%, 48%, 0.876);
     padding: 15px 0;
     position: relative;
-    background-color: hsla(162, 86%, 48%, 0.876);
 }
 
 #logo {
-    height: 50px;
+    height: 38px;
     display: inline;
     position: absolute;
     left: 10px;
-    top: 20px;
+    top: 25px;
 }
+
 h1 {
     padding: 10px 0;
     color:  #184218;
     font-size: 30px;
     font-weight: 600;
-    text-align: center;
+    text-align: right;
+    margin-right: 15px;
     color: white;
     font-family: 'Stick', sans-serif;
     display: block;
 }
-nav {
-    list-style: none;
-    text-align: center;
-}
+
 nav {
     list-style: none;
     text-align: center;
     margin-bottom: 15px;
     background-color: hsla(162, 86%, 48%, 0.876);
     box-shadow: 0px 10px 10px hsla(162, 88%, 16%, 0.876);
-    border-bottom: solid 5px black;
 }
 nav li {
     display: inline;
@@ -97,24 +94,25 @@ a {
     font-weight: 600;
 }
 
-#gps {
-    padding: 15px;
-    border-radius: 15px;
+#go {
+    font-weight: 600;
+    color: hsla(171, 94%, 19%, 0.876);
 }
+
+#zip {
+    color: hsla(171, 94%, 19%, 0.876);
+}
+
+#gps {
+    font-weight: 600;
+    color: hsla(171, 94%, 19%, 0.876);
+}
+
 #or {
     margin: 10px 0 0 0;
     font-size: 20px;
 }
-#zip {
-    width: 150px;
-    margin: 10px 15px 0 0;
-    display: inline-flex;
-    border-radius: 15px;
-}
-#go {
-    margin: 10px 0 0 0;
-    border-radius: 15px;
-}
+
 /* controls placeholder text for zip form */
 ::placeholder {
     color: var(--primary-green);
@@ -240,7 +238,7 @@ a {
         margin: 80px 10% 0;
     }
     .resultCard {
-        width: 80%;
+        width: 100%;
     }
 } 
 @media screen and (min-width: 1400px) { 
@@ -248,11 +246,50 @@ a {
         height: 700px;
     }
     .resultCard {
-        width: 70%;
+        width: 100%;
     }
 @media screen and (min-width: 1600px) { 
     .resultCard {
-        width: 60%;
+        width: 100%;
     }
 }
+}
+
+/***** Responsive header calls *****/
+
+@media (min-width: 400px) {
+    h1 {
+        margin-right: 25px;
+    }
+
+    #logo {
+        height: 50px;
+        top: 20px;
+        left: 15px;
+    }
+}
+
+@media (min-width: 500px) {
+    h1 {
+        text-align: center;
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media (min-width: 700px) {
+}
+
+@media (min-width: 900px) {
+    header {
+        height: 150px;
+    }
+    h1 {
+        margin-top: 50px;
+    }
+    #logo {
+        height: 80px;
+        top: 50px;
+        left: 25px;  
+    }
 }
