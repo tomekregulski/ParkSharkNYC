@@ -59,7 +59,7 @@ function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
             c(lat1 * p) * c(lat2 * p) * 
             (1 - c((lon2 - lon1) * p))/2;    
     if ((12742 * Math.asin(Math.sqrt(a))) < 1 ) {
-        var distance = (12742 * Math.asin(Math.sqrt(a)));
+        // var distance = (12742 * Math.asin(Math.sqrt(a)));
         var closeParkIndex = parkIndex;
         var closePark = {};
         closePark['name'] = park;
