@@ -42,16 +42,27 @@ body {
 header {
     background-color: hsla(162, 86%, 48%, 0.876);
     padding: 15px 0;
+    position: realtive;
+}
+
+#logo {
+    height: 38px;
+    display: inline;
+    position: absolute;
+    left: 10px;
+    top: 25px;
 }
 
 h1 {
     padding: 10px 0;
     color:  #184218;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
-    text-align: center;
+    text-align: right;
+    margin-right: 15px;
     color: white;
     font-family: 'Stick', sans-serif;
+    display: block;
 }
 
 h4 {
@@ -94,7 +105,9 @@ footer {
 }
 
 .container {
-    margin-top: 115px
+    display: block;
+    position: fixed;
+    top: 115px;
 }
 
 .panel {
@@ -122,9 +135,10 @@ footer {
 }
 
 .switch {
-    float: left;
-    left: 25px;
-    top: 9px;
+    display: flex;
+    position: relative;
+    top: 10px;
+    left: 7px;
 }
 
 #mainBody {
@@ -133,6 +147,9 @@ footer {
 
 #container {
     width: 335px;
+    display: block;
+    position: absolute;
+    top: 160px;
 }
 
 #myForm {
@@ -195,6 +212,21 @@ footer {
 
 #modalHead {
     height: 70px;
+}
+
+#noSaved {
+    margin-bottom: 30px !important;
+}
+
+#switchBox {
+    float: left;
+    position: relative;
+    background-color: hsla(171, 94%, 19%, 0.876);
+    width: 87px;
+    height: 35px;
+    left: 30px;
+    top: 0px;
+    border-radius: 5px;
 }
 
 tr>:nth-child(1) { 
@@ -284,6 +316,15 @@ tr>:nth-child(3) {
 /***** Media queries *****/
 
 @media (min-width: 400px) {
+    h1 {
+        margin-right: 25px;
+    }
+
+    #logo {
+        height: 50px;
+        top: 20px;
+        left: 15px;
+    }
     #container {
         width: 360px;
     }
@@ -297,6 +338,11 @@ tr>:nth-child(3) {
 }
 
 @media (min-width: 500px) {
+    h1 {
+        text-align: center;
+        right: 0;
+        margin: auto;
+    }
     #container {
         width: 460px;
     }
@@ -312,7 +358,6 @@ tr>:nth-child(3) {
 @media (min-width: 700px) {
     #container {
         width: 660px;
-        margin-top:200px;
     }
     #myForm {
         width: 630px;
@@ -330,9 +375,14 @@ tr>:nth-child(3) {
     h1 {
         margin-top: 50px;
     }
+    #logo {
+        height: 80px;
+        top: 50px;
+        left: 25px;  
+    }
     #container {
         width: 860px;
-        margin-top:200px;
+        top: 240px;
     }
     #myForm {
         width: 830px;

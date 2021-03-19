@@ -24,40 +24,37 @@ body {
 /************ Header ***********/
 
 header {
-    background-color: var(--primary-green);
+    background-color: hsla(162, 86%, 48%, 0.876);
     padding: 15px 0;
     position: relative;
-    background-color: hsla(162, 86%, 48%, 0.876);
 }
 
 #logo {
-    height: 50px;
+    height: 38px;
     display: inline;
     position: absolute;
     left: 10px;
-    top: 20px;
+    top: 25px;
 }
+
 h1 {
     padding: 10px 0;
     color:  #184218;
     font-size: 30px;
     font-weight: 600;
-    text-align: center;
+    text-align: right;
+    margin-right: 15px;
     color: white;
     font-family: 'Stick', sans-serif;
     display: block;
 }
-nav {
-    list-style: none;
-    text-align: center;
-}
+
 nav {
     list-style: none;
     text-align: center;
     margin-bottom: 15px;
     background-color: hsla(162, 86%, 48%, 0.876);
     box-shadow: 0px 10px 10px hsla(162, 88%, 16%, 0.876);
-    border-bottom: solid 5px black;
 }
 nav li {
     display: inline;
@@ -66,6 +63,10 @@ nav li {
 }
 a {
     color: white;
+}
+
+#load {
+    margin-bottom: 15px;
 }
 
 /************************************/
@@ -97,24 +98,25 @@ a {
     font-weight: 600;
 }
 
-#gps {
-    padding: 15px;
-    border-radius: 15px;
+#go {
+    font-weight: 600;
+    color: hsla(171, 94%, 19%, 0.876);
 }
+
+#zip {
+    color: hsla(171, 94%, 19%, 0.876);
+}
+
+#gps {
+    font-weight: 600;
+    color: hsla(171, 94%, 19%, 0.876);
+}
+
 #or {
     margin: 10px 0 0 0;
     font-size: 20px;
 }
-#zip {
-    width: 150px;
-    margin: 10px 15px 0 0;
-    display: inline-flex;
-    border-radius: 15px;
-}
-#go {
-    margin: 10px 0 0 0;
-    border-radius: 15px;
-}
+
 /* controls placeholder text for zip form */
 ::placeholder {
     color: var(--primary-green);
@@ -257,7 +259,7 @@ a {
     }
 
     .resultCard {
-        width: 80%;
+        width: 100%;
     }
 } 
 
@@ -268,13 +270,104 @@ a {
     }
 
     .resultCard {
-        width: 70%;
+        width: 100%;
     }
 }
 
 @media screen and (min-width: 1600px) { 
     
     .resultCard {
-        width: 60%;
+        width: 100%;
     }
 }
+
+/***** Responsive header calls *****/
+
+@media (min-width: 400px) {
+    h1 {
+        margin-right: 25px;
+    }
+
+    #logo {
+        height: 50px;
+        top: 20px;
+        left: 15px;
+    }
+}
+
+@media (min-width: 500px) {
+    h1 {
+        text-align: center;
+        right: 0;
+        margin: auto;
+    }
+}
+
+@media (min-width: 700px) {
+}
+
+@media (min-width: 900px) {
+    header {
+        height: 150px;
+    }
+    h1 {
+        margin-top: 50px;
+    }
+    #logo {
+        height: 80px;
+        top: 50px;
+        left: 25px;  
+    }
+}
+
+
+/*******************************/
+/*********** Loader ************/
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid rgba(81, 211, 139, 0.92);;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #load {
+    display: none;
+  }

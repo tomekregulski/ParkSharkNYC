@@ -164,4 +164,15 @@ function clearMem () {
         location.reload();
 };
 
-console.log("Thanks for stopping by :)")
+//hover
+var saveFormBtn = document.getElementById("saveForm");
+
+function hoverSave (){
+    saveFormBtn.className = "button is-primary is-focused is-fullwidth has-text-weight-bold";
+};
+
+function unhoverSave (){
+    saveFormBtn.className = "button is-primary is-outlined is-fullwidth has-text-weight-bold";
+};
+
+console.log("Thanks for stopping by :)");

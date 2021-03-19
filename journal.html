@@ -25,12 +25,15 @@
 <body>
     <!--title and page links-->
     <header #id="reset">
+        <div>
+            <img id='logo' src="assets/Logo.png">
+        </div>
         <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
     </header>
     
     <nav class="tabs is-fullwidth">
-        <li><a href="./index.html" class="has-text-primary-dark is-size-4"></span>Home</a></li>
-        <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4">Journal</a></li>
+        <li><a href="./index.html" class="has-text-primary-light is-size-4" id="homeTab">Home</a></li>
+        <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4"  id="journalTab">Journal</a></li>
     </nav>
 
     <!--main content container-->
@@ -57,7 +60,7 @@
                     <div class="control"><textarea class="textarea is-primary is-small is-fullwidth has-text-primary-dark" type="textarea" id="textarea" placeholder="optional" name="Notes"></textarea></div>
                 </div>
                 <br>
-                <button class="button is-primary is-outlined is-fullwidth has-text-weight-bold" type="submit" id="saveForm">Save</button>
+                <button class="button is-primary is-outlined is-fullwidth has-text-weight-bold" type="submit" id="saveForm" onmouseenter="hoverSave()" onmouseout="unhoverSave()">Save</button>
             </form>
 
             <!--memories table-->
@@ -91,7 +94,7 @@
                 <header class="modal-card-head has-background-primary" id="modalHead"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Uh oh!</p></header>
                 <section class="modal-card-body">
                 <p class="has-text-primary-dark is-small">You did not enter a park name or date. Please do so and try again!</p></section>
-                <section class="modal-card-foot p-2"><button class="button is-light m1" onclick="location.reload();">Ok</button>
+                <section class="modal-card-foot p-2"><button class="button is-primary m1" onclick="location.reload();">Ok</button>
                 </section>
             </div>
         </div>
@@ -107,12 +110,13 @@
                   <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
                 </span>
               </div>
-            <label class="switch">
-                <input type="checkbox" class="invis" id="slider">
-                <span class="slider round" id="slider round"></span>
-                <h4 class="has-text-primary-light is-size-6">sort</h4>
-            </label>
-            
+            <div id="switchBox">
+                <label class="switch">
+                    <input type="checkbox" class="invis" id="slider">
+                    <span class="slider round" id="slider round"></span>
+                    <h4 class="has-text-primary-light is-size-6">sort</h4>
+                </label>
+            </div>
         </div>
     </footer>
     <!--JS links-->
