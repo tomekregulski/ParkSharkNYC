@@ -5,6 +5,7 @@ var zipInput = document.getElementById('zip');
 var userLat;
 var userLon;
 var parkResults = [];
+var mapImage = document.getElementById('mapImg');
 
 // set click event listeners for buttons
 gpsBtn.addEventListener('click', getLocation);

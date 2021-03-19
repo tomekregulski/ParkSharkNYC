@@ -11,7 +11,7 @@
 
 body {
     background-image: url("../images/bg4.jpg");
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -113,7 +113,7 @@ a {
 #gps {
     font-weight: 600;
     color: hsla(171, 94%, 19%, 0.876);
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
 }
 
@@ -136,16 +136,16 @@ a {
 
 .placeholder-map {
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .placeholder-map img {
-    /* width: 50%;  */
     margin: 30px auto ;
 } 
+
 /****************************************/
 /************ Search Results ***********/
 
@@ -205,7 +205,7 @@ a {
     border-top: 16px solid rgba(81, 211, 139, 0.92);;
     -webkit-animation: spin 1.5s linear infinite;
     animation: spin 1.5s linear infinite;
-  }
+}
   
 @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
@@ -297,12 +297,12 @@ a {
 
     #map {
         width: 80%; 
-        margin: 70px auto 0;
+        margin: 50px auto 0;
     }
 
     .placeholder-map img  {
         width: 80%; 
-        margin: 70px auto 0;
+        margin: 50px auto 0;
     }
 
     #results {
@@ -333,16 +333,16 @@ a {
     #map {
         height: 600px;
         width: 70%; 
-        margin: 80px auto 0;
+        margin: 50px auto 0;
     }
 
     .placeholder-map img  {
         width: 70%; 
-        margin: 80px auto 0;
+        margin: 50px auto 0;
     }
 
     #results {
-        margin: 80px 10% 0;
+        margin: 80px 15% 0;
     }
 
     .resultCard {
@@ -356,14 +356,33 @@ a {
         height: 700px;
     }
 
-    .resultCard {
-        width: 100%;
+    #results {
+        margin: 80px 15% 0;
+    }
+
+    .placeholder-map img  {
+        margin: 60px auto 0;
+    }
+
+    #map {
+        margin: 60px auto 0;
     }
 }
 
 @media screen and (min-width: 1600px) { 
     
-    .resultCard {
-        width: 100%;
+    #results {
+        margin: 80px 20% 0;
+    }
+}
+
+@media screen and (min-width: 1700px) { 
+
+    .placeholder-map img  {
+        margin: 70px auto 0;
+    }
+
+    #map {
+        margin: 70px auto 0;
     }
 }
