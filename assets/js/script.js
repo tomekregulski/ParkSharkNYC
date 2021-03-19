@@ -5,6 +5,7 @@ var zipInput = document.getElementById('zip');
 var userLat;
 var userLon;
 var parkResults = [];
+var mapImage = document.getElementById('mapImg');
 
 // set click event listeners for buttons
 gpsBtn.addEventListener('click', getLocation);
@@ -37,6 +38,7 @@ function getLocation() {
   
 // pulls coordinates of each park, to be checked for distance from user lat/lon
 function checkParkCoord() {
+    mapImage.setAttribute('class', 'placeholder-map.show')
     for (var i = 0; i < parksArray.length; i++) {
         var parkLat = parksArray[i].coord[1];
         var parkLon = parksArray[i].coord[0];
