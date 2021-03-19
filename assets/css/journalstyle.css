@@ -152,6 +152,27 @@ footer {
     width: 240px;
 }
 
+#memBtn {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    right: 5px;
+}
+
+#memBtnBox {
+    height: 40px;
+    float: right;
+    position: relative;
+    right: 5px;
+    bottom: 20px;
+}
+
+#arrow {
+    display: flex;
+    position: relative;
+    left: 9px;
+}
+
 #showData {
     max-height: 450px;
     overflow: scroll;
@@ -170,6 +191,10 @@ footer {
 #modalCard {
     margin: 100px auto 0 auto;
     width: 300px;
+}
+
+#modalHead {
+    height: 70px;
 }
 
 tr>:nth-child(1) { 
@@ -256,7 +281,7 @@ tr>:nth-child(3) {
     border-radius: 50%;
   }
 
-/* Media queries */
+/***** Media queries *****/
 
 @media (min-width: 400px) {
     #container {
@@ -264,6 +289,10 @@ tr>:nth-child(3) {
     }
     #myForm {
         width: 330px;
+    }
+    #modalCard {
+        margin: 100px auto 0 auto;
+        width: 350px;
     }
 }
 
@@ -274,6 +303,10 @@ tr>:nth-child(3) {
     #myForm {
         width: 430px;
     }
+    #modalCard {
+        margin: 100px auto 0 auto;
+        width: 420px;
+    }
 }
 
 @media (min-width: 700px) {
@@ -283,6 +316,10 @@ tr>:nth-child(3) {
     }
     #myForm {
         width: 630px;
+    }
+    #modalCard {
+        margin: 100px auto 0 auto;
+        width: 600px;
     }
 }
 
@@ -299,5 +336,9 @@ tr>:nth-child(3) {
     }
     #myForm {
         width: 830px;
+    }
+    #modalCard {
+        margin: 250px auto 0 auto;
+        width: 800px;
     }
 }
