@@ -135,9 +135,10 @@ footer {
 }
 
 .switch {
-    float: left;
-    left: 25px;
-    top: 9px;
+    display: flex;
+    position: relative;
+    top: 10px;
+    left: 7px;
 }
 
 #mainBody {
@@ -215,6 +216,17 @@ footer {
 
 #noSaved {
     margin-bottom: 30px !important;
+}
+
+#switchBox {
+    float: left;
+    position: relative;
+    background-color: hsla(171, 94%, 19%, 0.876);
+    width: 87px;
+    height: 35px;
+    left: 30px;
+    top: 0px;
+    border-radius: 5px;
 }
 
 tr>:nth-child(1) { 
