@@ -164,4 +164,37 @@ function clearMem () {
         location.reload();
 };
 
+//hover & focus listeners
+var saveFormBtn = document.getElementById("saveForm");
+var homeTab = document.getElementById("homeTab");
+var journalTab = document.getElementById("homeTab");
+
+function hoverSave (){
+    saveFormBtn.className = "button is-primary is-focused is-fullwidth has-text-weight-bold";
+};
+
+function unhoverSave (){
+    saveFormBtn.className = "button is-primary is-outlined is-fullwidth has-text-weight-bold";
+};
+
+function hoverHome (){
+    homeTab.className = "has-text-primary-light is-size-4";
+    journalTab.className = "has-text-primary-dark is-size-4";
+};
+
+function unhoverHome (){
+    homeTab.className = "has-text-primary-dark is-size-4";
+    journalTab.className = "has-text-primary-light is-size-4";
+};
+
+function hoverJournal (){
+    journalTab.className = "has-text-primary-light is-size-4";
+    homeTab.className = "has-text-primary-dark is-size-4";
+};
+
+function unhoverJournal (){
+    journalTab.className = "has-text-primary-dark is-size-4";
+    homeTab.className = "has-text-primary-light is-size-4";
+};
+
 console.log("Thanks for stopping by :)")
