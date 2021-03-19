@@ -138,8 +138,7 @@ a {
     align-items: center;
 }
 .placeholder-map img {
-    /* height: 400px; */
-    width: 90%; 
+    /* width: 50%;  */
     margin: 30px auto 0;
 } 
 /****************************************/
@@ -183,12 +182,79 @@ a {
 .map-div.show {
   display: block;
 }
-/************************* */
+
+/*******************************/
+/*********** Loader ************/
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid rgba(81, 211, 139, 0.92);;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+  }
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  
+  /* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+  
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+  
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+  
+#load {
+    display: none;
+}
+
+/**************************/
+/*****Media Queries *******/
+
+@media (min-width: 400px) {
+    h1 {
+        margin-right: 25px;
+    }
+
+    #logo {
+        height: 50px;
+        top: 20px;
+        left: 15px;
+    }
+}
 
 @media screen and (min-width: 500px) { 
-    
+
     h1 {
-        font-size: 48px;
+        text-align: center;
+        right: 0;
+        margin: auto;
     }
 
     #logo {
@@ -218,71 +284,25 @@ a {
 }
 
 @media screen and (min-width: 800px) { 
+    
     .search-container {
         margin-top: 40px;
     }
+
     #map {
         width: 80%; 
         margin: 70px auto 0;
     }
+
+    .placeholder-map img  {
+        width: 80%; 
+        margin: 70px auto 0;
+    }
+
     #results {
         margin: 70px 10% 0;
     }
 } 
-@media screen and (min-width: 1200px) { 
-    .search-container {
-        margin-top: 50px;
-    }
-    #map {
-        height: 600px;
-        width: 70%; 
-        margin: 80px auto 0;
-    }
-    #results {
-        margin: 80px 10% 0;
-    }
-    .resultCard {
-        width: 100%;
-    }
-} 
-@media screen and (min-width: 1400px) { 
-    #map {
-        height: 700px;
-    }
-    .resultCard {
-        width: 100%;
-    }
-@media screen and (min-width: 1600px) { 
-    .resultCard {
-        width: 100%;
-    }
-}
-}
-
-/***** Responsive header calls *****/
-
-@media (min-width: 400px) {
-    h1 {
-        margin-right: 25px;
-    }
-
-    #logo {
-        height: 50px;
-        top: 20px;
-        left: 15px;
-    }
-}
-
-@media (min-width: 500px) {
-    h1 {
-        text-align: center;
-        right: 0;
-        margin: auto;
-    }
-}
-
-@media (min-width: 700px) {
-}
 
 @media (min-width: 900px) {
     header {
@@ -298,54 +318,46 @@ a {
     }
 }
 
+@media screen and (min-width: 1200px) { 
+    
+    .search-container {
+        margin-top: 50px;
+    }
 
-/*******************************/
-/*********** Loader ************/
+    #map {
+        height: 600px;
+        width: 70%; 
+        margin: 80px auto 0;
+    }
 
-#loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 120px;
-    height: 120px;
-    margin: -76px 0 0 -76px;
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid rgba(81, 211, 139, 0.92);;
-    -webkit-animation: spin 1.5s linear infinite;
-    animation: spin 1.5s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /* Add animation to "page content" */
-  .animate-bottom {
-    position: relative;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
-  }
-  
-  @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 } 
-    to { bottom:0px; opacity:1 }
-  }
-  
-  @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
-    to{ bottom:0; opacity:1 }
-  }
-  
-  #load {
-    display: none;
-  }
+    .placeholder-map img  {
+        width: 70%; 
+        margin: 80px auto 0;
+    }
+
+    #results {
+        margin: 80px 10% 0;
+    }
+
+    .resultCard {
+        width: 100%;
+    }
+} 
+
+@media screen and (min-width: 1400px) { 
+    
+    #map {
+        height: 700px;
+    }
+
+    .resultCard {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1600px) { 
+    
+    .resultCard {
+        width: 100%;
+    }
+}
