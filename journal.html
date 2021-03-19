@@ -32,7 +32,7 @@
     </header>
     
     <nav class="tabs is-fullwidth">
-        <li><a href="./index.html" class="has-text-primary-dark is-size-4" id="homeTab" onmouseenter="hoverHome()" onmouseout="unhoverHome()"></span>Home</a></li>
+        <li><a href="./index.html" class="has-text-primary-light is-size-4" id="homeTab">Home</a></li>
         <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4"  id="journalTab">Journal</a></li>
     </nav>
 
@@ -110,12 +110,13 @@
                   <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
                 </span>
               </div>
-            <label class="switch">
-                <input type="checkbox" class="invis" id="slider">
-                <span class="slider round" id="slider round"></span>
-                <h4 class="has-text-primary-light is-size-6">sort</h4>
-            </label>
-            
+            <div id="switchBox">
+                <label class="switch">
+                    <input type="checkbox" class="invis" id="slider">
+                    <span class="slider round" id="slider round"></span>
+                    <h4 class="has-text-primary-light is-size-6">sort</h4>
+                </label>
+            </div>
         </div>
     </footer>
     <!--JS links-->
