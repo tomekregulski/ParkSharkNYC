@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- links to Bulma framework, fonts, and styling files -->
+        <!-- links to Bulma CSS framework, fonts, and styling files -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
@@ -68,8 +68,9 @@
         </div>
     </main>
 
-    <!-- Modals -->
+    <!-- modals -->
     <div class="modal fade is-small" id="clearModal" role="dialog">
+        <!-- warning message when user clicks on clear all journal entries -->
         <div class="modal-dialog">
             <div class="modal-background" onclick="location.reload();"></div>
                 <div class="modal-card" id="modalCard">
@@ -82,8 +83,8 @@
         </div>
         <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
     </div>
-
     <div class="modal fade is-small" id="inputModal" role="dialog">
+        <!-- reminder to enter information in order to save input -->
         <div class="modal-dialog">
             <div class="modal-background" onclick="location.reload();"></div>
                 <div class="modal-card" id="modalCard">
@@ -97,15 +98,17 @@
         <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
     </div>
 
+    <!-- footer for clearing and sorting entries -->
     <footer>
-        <!--clear button and sort toggle-->
         <div id="clearSort" hidden>
+            <!-- clear button -->
             <div class="block" id="clearBtn">
                 <span type=button id="clear" data-target="#clearModal" data-toggle="modal" class="tag is-danger">
                   Clear Data
-                  <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
+                    <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
                 </span>
-              </div>
+            </div>
+            <!-- toggle -->
             <div id="switchBox">
                 <label class="switch">
                     <input type="checkbox" class="invis" id="slider">
@@ -116,7 +119,7 @@
         </div>
     </footer>
 
-    <!--JS links-->
+    <!-- links to libraries and JavaScript code -->
     <script src="assets/js/moment.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
