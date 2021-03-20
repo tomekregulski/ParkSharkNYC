@@ -15,7 +15,7 @@
         <title>ParkSharkNYC | Journal</title>
     </head>
 <body>
-    <!--title and page links-->
+    <!-- title and logo -->
     <header #id="reset">
         <div>
             <img id='logo' src="assets/Logo.png">
@@ -23,21 +23,24 @@
         <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
     </header>
     
+    <!-- navigation bar -->
     <nav class="tabs is-fullwidth">
         <li><a href="./index.html" class="has-text-primary-light is-size-4" id="homeTab">Home</a></li>
         <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4"  id="journalTab">Journal</a></li>
     </nav>
 
-    <!--main content container-->
+    <!-- main content container -->
     <main class="content" id="mainBody">
-
-        <!--save form-->
+        <!-- user's input form for journal entries -->
         <div class="panel" id="container">
+            <!-- navigation link to Memories page -->
             <p class="tabs is-fullwidth">
                 <a class="has-text-primary-light has-text-weight-bold" id="saveBtn" onclick="hide()"></a>
                 <div id="memBtnBox">
                 <a class="has-text-primary-light has-text-weight-bold is-boxed" id="memBtn" onclick="show()">Memories</a></div>
             </p>
+
+            <!-- form -->
             <form id="myForm">
                 <div class="field">
                     <label class="label has-text-primary-light has-text-weight-bold" for="Park Name">Park Name</label>
@@ -55,12 +58,13 @@
                 <button class="button is-primary is-outlined is-fullwidth has-text-weight-bold" type="submit" id="saveForm" onmouseenter="hoverSave()" onmouseout="unhoverSave()">Save</button>
             </form>
 
-            <!--memories table-->
+            <!-- table for Memories page -->
             <div  id="memPanel" hidden>
+                <!-- render saved entries -->
                 <p id="showData"></p>
+                <!-- render message when user has no saved entries -->
                 <p class="has-text-primary-light has-text-weight-bold is-size-6 has-text-centered m-2" id="noSaved" hidden>You have no saved memories.</p>
             </div>
-            
         </div>
     </main>
 
