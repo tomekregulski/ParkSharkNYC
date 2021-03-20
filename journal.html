@@ -1,126 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParkSharkNYC | Journal</title> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel = "stylesheet"
-    type = "text/css"
-    href = "./assets/css/reset.css" />
-    <link rel = "stylesheet"
-    type = "text/css"
-    href = "./assets/css/journalstyle.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
-    <link href="./assets/fontawesome-free-5.15.2-web/fontawesome-free-5.15.2-web/css/min.css">
-    
-    <script src="assets/js/moment.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <!--title and page links-->
-    <header #id="reset">
-        <div>
-            <img id='logo' src="assets/Logo.png">
-        </div>
-        <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
-    </header>
-    
-    <nav class="tabs is-fullwidth">
-        <li><a href="./index.html" class="has-text-primary-light is-size-4" id="homeTab">Home</a></li>
-        <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4"  id="journalTab">Journal</a></li>
-    </nav>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- links to Bulma CSS framework, fonts, and styling files -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+        <link href="./assets/fontawesome-free-5.15.2-web/fontawesome-free-5.15.2-web/css/min.css">
+        <link rel = "stylesheet" type = "text/css" href = "./assets/css/reset.css" />
+        <link rel = "stylesheet" type = "text/css" href = "./assets/css/journalstyle.css" />
+        <title>ParkSharkNYC | Journal</title>
+    </head>
+    <body>
+        <!-- title and logo -->
+        <header #id="reset">
+            <div>
+                <img id='logo' src="assets/Logo.png">
+            </div>
+            <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
+        </header>
+        
+        <!-- navigation bar -->
+        <nav class="tabs is-fullwidth">
+            <li><a href="./index.html" class="has-text-primary-light is-size-4" id="homeTab">Home</a></li>
+            <li class="is-active"><a href="#" class="has-text-primary-light is-focused is-size-4"  id="journalTab">Journal</a></li>
+        </nav>
 
-    <!--main content container-->
-    <main class="content" id="mainBody">
+        <!-- main content container -->
+        <main class="content" id="mainBody">
+            <!-- user's input form for journal entries -->
+            <div class="panel" id="container">
+                <!-- navigation link to Memories page -->
+                <p class="tabs is-fullwidth">
+                    <a class="has-text-primary-light has-text-weight-bold" id="saveBtn" onclick="hide()"></a>
+                    <div id="memBtnBox">
+                    <a class="has-text-primary-light has-text-weight-bold is-boxed" id="memBtn" onclick="show()">Memories</a></div>
+                </p>
 
-        <!--save form-->
-        <div class="panel" id="container">
-            <p class="tabs is-fullwidth">
-                <a class="has-text-primary-light has-text-weight-bold" id="saveBtn" onclick="hide()"></a>
-                <div id="memBtnBox">
-                <a class="has-text-primary-light has-text-weight-bold is-boxed" id="memBtn" onclick="show()">Memories</a></div>
-            </p>
-            <form id="myForm">
-                <div class="field">
-                    <label class="label has-text-primary-light has-text-weight-bold" for="Park Name">Park Name</label>
-                    <div class="control"><input class="input is-primary is-small is-fullwidth has-text-primary-dark" id="parkInput" type="text" placeholder="required" name="Name"></div>
+                <!-- form -->
+                <form id="myForm">
+                    <div class="field">
+                        <label class="label has-text-primary-light has-text-weight-bold" for="Park Name">Park Name</label>
+                        <div class="control"><input class="input is-primary is-small is-fullwidth has-text-primary-dark" id="parkInput" type="text" placeholder="required" name="Name"></div>
+                    </div>
+                    <div class="field">
+                        <label class="label has-text-primary-light has-text-weight-bold" for="Date">Date Visited</label>
+                        <div class="control"><input class="input is-primary is-small is-fullwidth has-text-primary-dark" type="date" id="date-visited" name="Date"></div>
+                    </div>
+                    <div class="field">
+                        <label class="label has-text-primary-light has-text-weight-bold" for="Notes">Notes</label>
+                        <div class="control"><textarea class="textarea is-primary is-small is-fullwidth has-text-primary-dark" type="textarea" id="textarea" placeholder="optional" name="Notes"></textarea></div>
+                    </div>
+                    <br>
+                    <button class="button is-primary is-outlined is-fullwidth has-text-weight-bold" type="submit" id="saveForm" onmouseenter="hoverSave()" onmouseout="unhoverSave()">Save</button>
+                </form>
+
+                <!-- table for Memories page -->
+                <div  id="memPanel" hidden>
+                    <!-- render saved entries -->
+                    <p id="showData"></p>
+                    <!-- render message when user has no saved entries -->
+                    <p class="has-text-primary-light has-text-weight-bold is-size-6 has-text-centered m-2" id="noSaved" hidden>You have no saved memories.</p>
                 </div>
-                <div class="field">
-                    <label class="label has-text-primary-light has-text-weight-bold" for="Date">Date Visited</label>
-                    <div class="control"><input class="input is-primary is-small is-fullwidth has-text-primary-dark" type="date" id="date-visited" name="Date"></div>
+            </div>
+        </main>
+
+        <!-- modals -->
+        <div class="modal fade is-small" id="clearModal" role="dialog">
+            <!-- warning message when user clicks on clear all journal entries -->
+            <div class="modal-dialog">
+                <div class="modal-background" onclick="location.reload();"></div>
+                    <div class="modal-card" id="modalCard">
+                    <header class="modal-card-head has-background-danger" id="modalHead"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Heads up!</p></header>
+                    <section class="modal-card-body">
+                    <p class="has-text-danger-dark is-small">You are about to erase all of your saved data. This cannot be undone. Do you want to proceed?</p></section>
+                    <section class="modal-card-foot p-2"><button class="button is-primary-light m1" onclick="location.reload();">Cancel</button><button class="button is-danger m1" onclick="clearMem()">Confirm</button>
+                    </section>
                 </div>
-                <div class="field">
-                    <label class="label has-text-primary-light has-text-weight-bold" for="Notes">Notes</label>
-                    <div class="control"><textarea class="textarea is-primary is-small is-fullwidth has-text-primary-dark" type="textarea" id="textarea" placeholder="optional" name="Notes"></textarea></div>
+            </div>
+            <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
+        </div>
+        <div class="modal fade is-small" id="inputModal" role="dialog">
+            <!-- reminder to enter information in order to save input -->
+            <div class="modal-dialog">
+                <div class="modal-background" onclick="location.reload();"></div>
+                    <div class="modal-card" id="modalCard">
+                    <header class="modal-card-head has-background-primary" id="modalHead"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Uh oh!</p></header>
+                    <section class="modal-card-body">
+                    <p class="has-text-primary-dark is-small">You did not enter a park name or date. Please do so and try again!</p></section>
+                    <section class="modal-card-foot p-2"><button class="button is-primary m1" onclick="location.reload();">Ok</button>
+                    </section>
                 </div>
-                <br>
-                <button class="button is-primary is-outlined is-fullwidth has-text-weight-bold" type="submit" id="saveForm" onmouseenter="hoverSave()" onmouseout="unhoverSave()">Save</button>
-            </form>
-
-            <!--memories table-->
-            <div  id="memPanel" hidden>
-                <p id="showData"></p>
-                <p class="has-text-primary-light has-text-weight-bold is-size-6 has-text-centered m-2" id="noSaved" hidden>You have no saved memories.</p>
             </div>
-            
+            <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
         </div>
-    </main>
 
-    <!-- Modals -->
-    <div class="modal fade is-small" id="clearModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-background" onclick="location.reload();"></div>
-                <div class="modal-card" id="modalCard">
-                <header class="modal-card-head has-background-danger" id="modalHead"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Heads up!</p></header>
-                <section class="modal-card-body">
-                <p class="has-text-danger-dark is-small">You are about to erase all of your saved data. This cannot be undone. Do you want to proceed?</p></section>
-                <section class="modal-card-foot p-2"><button class="button is-primary-light m1" onclick="location.reload();">Cancel</button><button class="button is-danger m1" onclick="clearMem()">Confirm</button>
-                </section>
+        <!-- footer for clearing and sorting entries -->
+        <footer>
+            <div id="clearSort" hidden>
+                <!-- clear button -->
+                <div class="block" id="clearBtn">
+                    <span type=button id="clear" data-target="#clearModal" data-toggle="modal" class="tag is-danger">
+                    Clear Data
+                        <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
+                    </span>
+                </div>
+                <!-- toggle -->
+                <div id="switchBox">
+                    <label class="switch">
+                        <input type="checkbox" class="invis" id="slider">
+                        <span class="slider round" id="slider round"></span>
+                        <h4 class="has-text-primary-light is-size-6">sort</h4>
+                    </label>
+                </div>
             </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
-    </div>
+        </footer>
 
-    <div class="modal fade is-small" id="inputModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-background" onclick="location.reload();"></div>
-                <div class="modal-card" id="modalCard">
-                <header class="modal-card-head has-background-primary" id="modalHead"><p class="modal-card-title has-text-danger-light has-text-weight-bold">Uh oh!</p></header>
-                <section class="modal-card-body">
-                <p class="has-text-primary-dark is-small">You did not enter a park name or date. Please do so and try again!</p></section>
-                <section class="modal-card-foot p-2"><button class="button is-primary m1" onclick="location.reload();">Ok</button>
-                </section>
-            </div>
-        </div>
-        <button class="modal-close is-large" aria-label="close" onclick="location.reload();"></button>
-    </div>
-
-    <footer>
-        <!--clear button and sort toggle-->
-        <div id="clearSort" hidden>
-            <div class="block" id="clearBtn">
-                <span type=button id="clear" data-target="#clearModal" data-toggle="modal" class="tag is-danger">
-                  Clear Data
-                  <button class="delete is-small" id="clear" data-toggle="modal" data-target="#clearModal"></button>
-                </span>
-              </div>
-            <div id="switchBox">
-                <label class="switch">
-                    <input type="checkbox" class="invis" id="slider">
-                    <span class="slider round" id="slider round"></span>
-                    <h4 class="has-text-primary-light is-size-6">sort</h4>
-                </label>
-            </div>
-        </div>
-    </footer>
-    <!--JS links-->
-    <script src="./assets/js/table.js"></script>
-    <script src="./assets/js/journal.js"></script>
-</body>
+        <!-- links to libraries and JavaScript code -->
+        <script src="assets/js/moment.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="./assets/js/table.js"></script>
+        <script src="./assets/js/journal.js"></script>
+    </body>
 </html>
