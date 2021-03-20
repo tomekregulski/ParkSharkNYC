@@ -3,7 +3,7 @@ var parksArray = [];
 var parksWithTrails = [];
 var parksWithMonuments = [];
 
-// initialize building parksArray by starting with trails
+// initialize building parksArray, starting with building a list of which parks have official trails
 getParkTrails();
 
 function getParkTrails() {
@@ -30,7 +30,7 @@ function getParkTrails() {
     
 };
 
-
+// build a list of parks that feature monuments
 function getParkMonuments() {
 
     var parksUrl = 'https://data.cityofnewyork.us/resource/6rrm-vxj9.json'
@@ -45,19 +45,19 @@ function getParkMonuments() {
                 // if monument is in a park, extract the name and add to parksWithMonuments
                 if (data[i].parkprop === "Y") {
                     var parkName = data[i].parkname;
-                    // add park name to parksWithMonuments array if name does not already exits in that array, aka prevent duplicate entries
+                    // add park name to parksWithMonuments array if name does not already exits in that array, preventing duplicate entries
                     if (!parksWithMonuments.includes(parkName)) {
                         parksWithMonuments.push(parkName);
                     }
                 }
             }
-        //console.log(parksWithMonuments[0]);
         getParkLocations();
         })
     console.log('monuments done');
     
 };
 
+// Get names, addresses, and coordinates for parks
 function getParkLocations() {
 
     var parksUrl = 'https://data.cityofnewyork.us/resource/enfh-gkve.json'
@@ -71,7 +71,7 @@ function getParkLocations() {
                 var parkName = data[i].signname;
                 var address = data[i].location;
                 var coord = data[i].multipolygon.coordinates[0][0][0];
-                
+                // Combine information from previous API searches into new park objects and build a local parksArray
                 var newPark = {};
                 newPark['name'] = parkName;
                 newPark['address'] = address;
@@ -88,10 +88,6 @@ function getParkLocations() {
                 }
                 parksArray.push(newPark);
         }
-        //console.log(parksArray.length);//here it prints 100 to console
-        //console.log(parksArray[0]);
     })
-    console.log('ready');
-    
-    // we now have a locally available array of all parks, including whether or not they have a monument or trail (most have neither)
+    console.log('parksArray ready');
 };
