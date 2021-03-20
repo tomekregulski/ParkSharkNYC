@@ -11,7 +11,7 @@
 
 body {
     background-image: url("../images/bg4.jpg");
-    background-size: auto 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     /* position: relative; */ /* Not necessary unless we use the filter below */
@@ -237,6 +237,10 @@ tr>:nth-child(3) {
     Width: 50%;
     }
 
+#memBtn:hover, #homeTab:hover {
+    text-decoration: underline;
+}
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -269,6 +273,7 @@ tr>:nth-child(3) {
   .slider {
     position: absolute;
     cursor: pointer;
+    width: 30px;
     top: 0;
     left: 0;
     right: 0;
