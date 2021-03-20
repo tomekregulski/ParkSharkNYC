@@ -225,6 +225,10 @@ tr>:nth-child(3) {
     Width: 50%;
     }
 
+#memBtn:hover, #homeTab:hover {
+    text-decoration: underline;
+}
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -257,6 +261,7 @@ tr>:nth-child(3) {
   .slider {
     position: absolute;
     cursor: pointer;
+    width: 30px;
     top: 0;
     left: 0;
     right: 0;
