@@ -40,6 +40,7 @@ slider.addEventListener('change', function() {
     }
 });
 
+// Save memory function 
 function saveCheck () {
     localStorage.setItem("slider", isChecked);
 };

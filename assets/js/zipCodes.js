@@ -1,3 +1,4 @@
+// Vaild zip codes
 var zipCodes = [
     {
         "zip": "00501",
