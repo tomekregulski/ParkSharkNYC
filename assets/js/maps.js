@@ -1,8 +1,9 @@
 var mapDiv = document.getElementById('map');
 
+// render Google Maps after obtaining user's location coordinates
 function showMap() {
     mapDiv.setAttribute('class', 'map.open');
-    console.log('hello');
+    //console.log('hello');
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: new google.maps.LatLng(userLat, userLon),
@@ -12,6 +13,7 @@ function showMap() {
 
     var marker, i;
 
+    // loop through parkResults to compile results of all satisfying locations
     for (i = 0; i < parkResults.length; i++) {  
         marker = new google.maps.Marker({
                 position: new google.maps.LatLng(parkResults[i].coord[0], parkResults[i].coord[1]),

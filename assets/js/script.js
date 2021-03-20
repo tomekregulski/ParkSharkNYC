@@ -27,7 +27,7 @@ function zipCoord(event)  {
     checkParkCoord();
 };
 
-// Captures user's current location and sets user lat/lon
+// capture user's current location and sets user lat/lon
 function getLocation() {
     window.navigator.geolocation.getCurrentPosition((location) => {
           userLat = location.coords.latitude;
@@ -36,7 +36,7 @@ function getLocation() {
       })
   };
   
-// pulls coordinates of each park, to be checked for distance from user lat/lon
+// pull coordinates of each park, to be checked for distance from user lat/lon
 function checkParkCoord() {
     for (var i = 0; i < parksArray.length; i++) {
         var parkLat = parksArray[i].coord[1];
@@ -47,7 +47,7 @@ function checkParkCoord() {
         distance(userLat, userLon, parkLat, parkLon, park, parkIndex);
     }
     // showMap() is intentionally commented out below for the purpose of Github deployment. 
-    //Please see installation instructions and use section of the README.md if setting up functionality locally
+    //Please reference the Installation and Use section of the README for guidance on setting up functionality locally
     // showMap();
     createResults();
 };

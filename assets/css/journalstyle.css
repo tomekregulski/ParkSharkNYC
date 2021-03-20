@@ -1,5 +1,6 @@
 /********************************/
 /******** Body/Background *******/
+
 :root {
     --primary-green: rgba(81, 211, 139, 0.92);
 }
@@ -16,7 +17,9 @@ body {
     background-position: center center;
 }
 
-/* Main Div Wrapper */
+/********************************/
+/******** Main Div Wrapper *******/
+
 .content {
     display: flex;
     flex-direction: column;
@@ -78,7 +81,8 @@ a {
     color: white;
 }
 
-/* Main body */
+/********************************/
+/******** Main Content *******/
 
 label {
     font-size: 12px;
@@ -225,6 +229,10 @@ tr>:nth-child(3) {
     Width: 50%;
     }
 
+#memBtn:hover, #homeTab:hover {
+    text-decoration: underline;
+}
+
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -233,75 +241,77 @@ tr>:nth-child(3) {
     height: 17px;
   }
 
-  .clear {
-        background: rgb(255, 0, 0);
-        color: #fff;
-        font-family: 'Helvetica', 'Arial', sans-serif;
-        font-size: 1em;
-        font-weight: bold;
-        text-align: center;
-        width: 25px;
-        height: 25px;
-        border: 0px;
-        border-radius: 5px;
-  }
+.clear {
+    background: rgb(255, 0, 0);
+    color: #fff;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    border-radius: 5px;
+}
   
-  /* Hide default HTML checkbox */
-  .invis {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(204, 204, 204, 0.87);
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 13px;
-    width: 13px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: hsla(162, 86%, 48%, 0.876);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px hsla(162, 86%, 48%, 0.876);
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(13px);
-    -ms-transform: translateX(13px);
-    transform: translateX(13px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 17px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+/* Hide default HTML checkbox */
+.invis {
+opacity: 0;
+width: 0;
+height: 0;
+}
 
-/***** Media queries *****/
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+width: 30px;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(204, 204, 204, 0.87);
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 13px;
+width: 13px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: hsla(162, 86%, 48%, 0.876);
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px hsla(162, 86%, 48%, 0.876);
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(13px);
+-ms-transform: translateX(13px);
+transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 17px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+/********************************/
+/************ Media queries ***********/
 
 @media (min-width: 400px) {
     h1 {

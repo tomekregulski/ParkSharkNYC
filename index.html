@@ -1,64 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel = "stylesheet"
-    type = "text/css"
-    href = "./assets/css/reset.css" />
-    <link rel = "stylesheet"
-    type = "text/css"
-    href = "./assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
-    <title>ParkSharkNYC</title>
-</head>
-<body>
-    <!--loader-->
-    <div id="loader" class="animate-bottom"></div>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- links to Bulma CSS framework, fonts, and styling files -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Stick&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "./assets/css/reset.css" />
+        <link rel = "stylesheet" type = "text/css" href = "./assets/css/style.css" />
+        <title>ParkSharkNYC</title>
+    </head>
+    
+    <body>
+        <!-- page loader -->
+        <div id="loader" class="animate-bottom"></div>
 
-    <!--header-->
-    <header>
-        <div>
-            <img id='logo' src="assets/Logo.png">
-        </div>
-        <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
-    </header>
+        <!-- title and logo -->
+        <header>
+            <div>
+                <img id='logo' src="assets/Logo.png">
+            </div>
+            <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
+        </header>
 
-    <nav class="tabs is-fullwidth">
-        <li><a href="#" class="has-text-primary-light is-size-4"></span>Home</a></li>
-        <li class="is-active"><a href="./journal.html" class="has-text-primary-light is-focused is-size-4">Journal</a></li>
-    </nav>
-    <!--main body-->
-    <main class="content animate-bottom" id="load">
-        <div class="search-container">
-            <button class="coord button is-primary is-inverted is-big " id="gps">Search Nearby</button>
-            <p class ="coord" id="or">or</p>
-            <form class="coord">
-                <input class="input is-inverted is-big" type="text" id="zip" placeholder="Enter Zip Code">
-                <button class="button is-primary is-inverted is-big" id="go">Go</button>
-            </form>
-        </div>
-        <div class="placeholder-map">
-            <img src="./assets/Map Placeholder.png">
-        </div>
-        <!-- <div data-role="content" style="padding:0;">
-            <div id="map" class="map-div"></div>
-        </div> -->
-        <div id="results">
-        </div>
-    </main>
-    <!-- Intentionally commented out below for the purpose of Github deployment. 
-    Please follow installation instructions if setting up Google Maps functionality locally. -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY-HERE" async></script> -->
-    <script src="assets/js/zipCodes.js"></script>
-    <script src="assets/js/parksArray.js"></script>
-    <script src="assets/js/maps.js"></script>
-    <script src="assets/js/loader.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+        <!-- navigation bar -->
+        <nav class="tabs is-fullwidth">
+            <li><a href="#" class="has-text-primary-light is-size-4" id="homeTab"></span>Home</a></li>
+            <li class="is-active"><a href="./journal.html" class="has-text-primary-light is-focused is-size-4" id="journalTab">Journal</a></li>
+        </nav>
+
+        <!-- main content -->
+        <main class="content animate-bottom" id="load">
+            <!-- take user's input to obtain location coordinates -->
+            <div class="search-container">
+                <!-- search nearby option -->
+                <button class="coord button is-primary is-inverted is-big " id="gps">Search Nearby</button>
+                <p class ="coord" id="or">or</p>
+                <!-- search by zip code option -->
+                <form class="coord">
+                    <input class="input is-inverted is-big" type="text" id="zip" placeholder="Enter Zip Code">
+                    <button class="button is-primary is-inverted is-big" id="go">Go</button>
+                </form>
+            </div>
+
+            <!-- render maps -->
+            <!-- Intentionally commented out below for the purpose of GitHub deployment.  -->
+            <!-- <div data-role="content" style="padding:0;"> -->
+                <!-- <div id="map" class="map-div"></div> -->
+            <!-- </div> -->
+            <div class="placeholder-map">
+                <img src="./assets/Map Placeholder.png">
+            </div>
+            
+            <!-- render park information search results -->
+            <div id="results"></div>
+        </main>
+
+        <!-- link to Google Maps API intentionally commented out below for the purpose of GitHub deployment.  -->
+        <!-- Please follow Google Maps API installation instructions if setting up functionality locally. -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY-HERE" async></script> -->
+        
+        <!-- links to JavaScript code -->
+        <script src="assets/js/zipCodes.js"></script>
+        <script src="assets/js/parksArray.js"></script>
+        <script src="assets/js/maps.js"></script>
+        <script src="assets/js/loader.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
