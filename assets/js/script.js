@@ -46,8 +46,8 @@ function checkParkCoord() {
         var parkIndex = i; 
         distance(userLat, userLon, parkLat, parkLon, park, parkIndex);
     }
-    // showMap() is intentionally commented out below for the purpose of GitHub deployment. 
-    // Please follow Google Maps API installation instructions if setting up functionality locally.
+    // showMap() is intentionally commented out below for the purpose of Github deployment. 
+    //Please reference the Installation and Use section of the README for guidance on setting up functionality locally
     // showMap();
     createResults();
 };
