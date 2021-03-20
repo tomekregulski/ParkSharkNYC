@@ -1,3 +1,4 @@
+// all vaild park names
 var parkNames = ["Grand Central Parkway Extension", 
 "Bryan Park", 
 "Matthew P. Sapolin Playground", 
