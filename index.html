@@ -15,10 +15,10 @@
     </head>
     
 <body>
-    <!--loader-->
+    <!--page loader-->
     <div id="loader" class="animate-bottom"></div>
 
-    <!--header-->
+    <!--title and logo-->
     <header>
         <div>
             <img id='logo' src="assets/Logo.png">
@@ -26,12 +26,15 @@
         <h1 class="has-text-primary-light is-size-3">ParkSharkNYC</h1>
     </header>
 
+    <!-- navigation bar -->
     <nav class="tabs is-fullwidth">
         <li><a href="#" class="has-text-primary-light is-size-4" id="homeTab"></span>Home</a></li>
         <li class="is-active"><a href="./journal.html" class="has-text-primary-light is-focused is-size-4" id="journalTab">Journal</a></li>
     </nav>
+
     <!--main body-->
     <main class="content animate-bottom" id="load">
+        <!-- take user's input to obtain location coordinates -->
         <div class="search-container">
             <button class="coord button is-primary is-inverted is-big " id="gps">Search Nearby</button>
             <p class ="coord" id="or">or</p>
@@ -43,15 +46,18 @@
         <div class="placeholder-map">
             <img src="./assets/Map Placeholder.png">
         </div>
-        <!-- <div data-role="content" style="padding:0;">
-            <div id="map" class="map-div"></div>
-        </div> -->
-        <div id="results">
-        </div>
+        <!-- Intentionally commented out below for the purpose of GitHub deployment.  -->
+        <!-- <div data-role="content" style="padding:0;"> -->
+            <!-- <div id="map" class="map-div"></div> -->
+        <!-- </div> -->
+        <div id="results"></div>
     </main>
-    <!-- Intentionally commented out below for the purpose of Github deployment. 
-    Please follow installation instructions if setting up Google Maps functionality locally. -->
+
+    <!-- Intentionally commented out below for the purpose of GitHub deployment.  -->
+    <!-- Please follow Google Maps API installation instructions if setting up functionality locally. -->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-KEY-HERE" async></script> -->
+    
+    <!-- links to JavaScript code -->
     <script src="assets/js/zipCodes.js"></script>
     <script src="assets/js/parksArray.js"></script>
     <script src="assets/js/maps.js"></script>
