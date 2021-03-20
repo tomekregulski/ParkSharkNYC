@@ -1,12 +1,10 @@
-//retrieves raw memories JSON from storage
+//retrieve raw memories JSON from storage
 var memJSON = localStorage.getItem("memories");
-
 var savedMem = [];
-
 //console.log(memJSON);
 //console.log(savedMem);
 
-//sorts objects in array by property
+//sort objects in array of journal entries by property
 function sortByProperty(prop) {
     return function(a, b) {
         if (a[prop] > b[prop]){
@@ -20,7 +18,6 @@ function sortByProperty(prop) {
 };
 
 var slider = document.getElementById("slider");
-
 var isChecked = slider.checked;
 //console.log(isChecked);
 
@@ -47,6 +44,7 @@ function saveCheck () {
     localStorage.setItem("slider", isChecked);
 };
 
+// render journal entries in table
 window.onload = function() {
     slider = JSON.parse(localStorage.getItem("slider"));
     savedMem = JSON.parse(localStorage.getItem("memories"));
@@ -70,9 +68,8 @@ window.onload = function() {
 
 rawMem = [];
 
-//loads table of saved memories
+//load table of saved memories from journal entries
 function loadMemories () {
-
     //console.log(savedMem);
 
     //takes sortMem JSON and converts it to JS object with dates as objects
