@@ -154,7 +154,7 @@ a {
 /************ Search Results ***********/
 
 #results {
-    margin: 0 15%;
+    margin: 0 10%;
     margin-top: 5px;
     display: flex;
     flex-direction: column;
@@ -179,7 +179,7 @@ a {
 
 #map {
     height: 400px;
-    width: 50%;
+    width: 90%;
     background-color: grey;
     margin: auto;
     margin-bottom: 30px;
