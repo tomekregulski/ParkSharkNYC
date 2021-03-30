@@ -14,6 +14,8 @@ zipSearch.addEventListener('click', zipCoord); //
 // pull coordinates for zip code
 function zipCoord(event)  {
     event.preventDefault();
+    // clear any prior search results
+    parkResults = [];
     var userZip = zipInput.value;
     for (var i = 0; i < zipCodes.length; i++) {
         if (zipCodes[i].zip == userZip) {
@@ -29,6 +31,8 @@ function zipCoord(event)  {
 
 // capture user's current location and sets user lat/lon
 function getLocation() {
+    // clear any prior search results
+    parkResults = [];
     window.navigator.geolocation.getCurrentPosition((location) => {
           userLat = location.coords.latitude;
           userLon = location.coords.longitude;
@@ -60,7 +64,6 @@ function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
             c(lat1 * p) * c(lat2 * p) * 
             (1 - c((lon2 - lon1) * p))/2;    
     if ((12742 * Math.asin(Math.sqrt(a))) < 1 ) {
-        // var distance = (12742 * Math.asin(Math.sqrt(a)));
         var closeParkIndex = parkIndex;
         var closePark = {};
         closePark['name'] = park;
@@ -72,8 +75,13 @@ function distance(lat1, lon1, lat2, lon2, park, parkIndex) {
 }; 
 
 function createResults() {
+    // clear any previous search result cards
+    var resultEl = document.getElementById("results");
+    while (resultEl.firstChild) {
+        resultEl.removeChild(resultEl.firstChild);
+    }
     //render park search results in results div
-    for (var i = 0; i < parkResults.length; i++) {//parksArray.length
+    for (var i = 0; i < parkResults.length; i++) {
         console.log("rendering div now")
         //create result card elements
         var nameList = document.createElement('p');
@@ -98,9 +106,11 @@ function createResults() {
         address.setAttribute('class', 'subtitle-is-7 has-text-primary-dark has-text-left')
         monumentList.setAttribute('class', 'control has-text-primary-dark has-text-left');
         trailList.setAttribute('class', 'control has-text-primary-dark has-text-left');
+        address.setAttribute('style', 'padding-left: 8px; padding-right: 8px; line-height: 1.5');
+        monumentList.setAttribute('style', 'padding-left: 8px');
+        trailList.setAttribute('style', 'padding-left: 8px; padding-bottom: 8px');
 
         //append result card to results div
-        var resultEl = document.getElementById("results");
         resultEl.appendChild(parksdiv);
         resultEl.setAttribute('class', 'box p-4');
     }

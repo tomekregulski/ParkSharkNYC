@@ -138,18 +138,18 @@ footer {
 }
 
 #container {
-    width: 335px;
+    width: 260px;
     display: block;
     position: absolute;
     top: 160px;
 }
 
 #myForm {
-    width: 305px;
+    width: 230px;
 }
 
 #park-name, #date-visited {
-    width: 135px;
+    width: 135px; 
     padding: 2px;
 }
 
@@ -312,6 +312,26 @@ border-radius: 50%;
 
 /********************************/
 /************ Media queries ***********/
+
+@media (min-width: 300px) {
+    
+    #myForm {
+        width: 260px; 
+    }
+    #container {
+        width: 290px;
+    }
+}
+
+@media (min-width: 350px) {
+    
+    #myForm {
+        width: 300px; 
+    }
+    #container {
+        width: 330px;
+    }
+}
 
 @media (min-width: 400px) {
     h1 {
