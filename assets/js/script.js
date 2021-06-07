@@ -93,7 +93,8 @@ function createResults() {
         var location = document.createElement('p');
         var monumentList = document.createElement('p');
         var trailList = document.createElement('p');
-        nameList.innerText = parkResults[i].name;
+        var number = i + 1
+        nameList.innerText = `${number}. ${parkResults[i].name}`;
         location.innerText = parkResults[i].location;
         console.log(parkResults[i].location);
         monumentList.innerText = 'Monuments: ' + parkResults[i].monument
@@ -112,7 +113,7 @@ function createResults() {
         location.setAttribute('class', 'subtitle-is-7 has-text-primary-dark has-text-left')
         monumentList.setAttribute('class', 'control has-text-primary-dark has-text-left');
         trailList.setAttribute('class', 'control has-text-primary-dark has-text-left');
-        address.setAttribute('style', 'padding-left: 8px; padding-right: 8px; line-height: 1.5');
+        location.setAttribute('style', 'padding-left: 8px; padding-right: 8px; line-height: 1.5');
         monumentList.setAttribute('style', 'padding-left: 8px');
         trailList.setAttribute('style', 'padding-left: 8px; padding-bottom: 8px');
 
@@ -158,11 +159,12 @@ function createMarkers(map) {
         console.log(name, location, monument, trail);
         var popupContent = `${name}`;
         console.log(popupContent);
+        var number = i + 1
         
         var markerLocation = new L.LatLng(lat, lon);
         var marker = new L.Marker(markerLocation);
 
-        marker.bindTooltip(`${name}<br>${location}<br>Monuments: ${monument}<br>Trails: ${trail}`)
+        marker.bindTooltip(`${number}. ${name}<br>${location}<br>Monuments: ${monument}<br>Trails: ${trail}`)
         popupArray.push(marker)
         
     }
