@@ -138,7 +138,7 @@ a {
     display: inline-flex;
 }
 
-.placeholder-map {
+/* .placeholder-map {
     margin: 0 auto;
     padding: 0 10px;
     display: flex;
@@ -148,7 +148,7 @@ a {
 }
 .placeholder-map img {
     margin: 30px auto ;
-} 
+}  */
 
 /****************************************/
 /************ Search Results ***********/
@@ -156,6 +156,7 @@ a {
 #results {
     margin: 0 15%;
     margin-top: 5px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,10 +180,11 @@ a {
 
 #map {
     height: 400px;
-    width: 50%;
+    width: 85%;
     background-color: grey;
     margin: auto;
     margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 .map-div {
@@ -287,10 +289,6 @@ a {
     #go {
         margin: 0;
     }
-
-    .placeholder-map img  {
-        width: 90%; 
-    }
 }
 
 @media screen and (min-width: 800px) { 
@@ -304,13 +302,8 @@ a {
         margin: 50px auto 0;
     }
 
-    .placeholder-map img  {
-        width: 80%; 
-        margin: 50px auto 0;
-    }
-
     #results {
-        margin: 70px 10% 0;
+        margin: 70px 10% 20px;
     }
 } 
 
@@ -340,10 +333,10 @@ a {
         margin: 50px auto 0;
     }
 
-    .placeholder-map img  {
+    /* .placeholder-map img  {
         width: 70%; 
         margin: 50px auto 0;
-    }
+    } */
 
     #results {
         margin: 80px 15% 0;
@@ -358,19 +351,17 @@ a {
     
     #map {
         height: 700px;
+        margin: 60px auto 0;
     }
 
     #results {
         margin: 80px 15% 0;
     }
 
-    .placeholder-map img  {
+    /* .placeholder-map img  {
         margin: 60px auto 0;
-    }
+    } */
 
-    #map {
-        margin: 60px auto 0;
-    }
 }
 
 @media screen and (min-width: 1600px) { 
@@ -380,10 +371,10 @@ a {
     }
 
 @media screen and (min-width: 1700px) { 
-
+/* 
     .placeholder-map img  {
         margin: 70px auto 0;
-    }
+    } */
 
     #map {
         margin: 70px auto 0;
