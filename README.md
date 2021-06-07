@@ -1,6 +1,6 @@
 # ParkSharkNYC
 
-Go to the deployed application here: <div style="display: inline">https://tomekregulski.github.io/ParkSharkNYC/</div>
+Go to the deployed application here: <div style="display: inline">https://ladystephani.github.io/ParkSharkNYC/</div>
 
 * [Team Members](#team-members)
 * [Description ](#description)
