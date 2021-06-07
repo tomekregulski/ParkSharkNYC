@@ -60,22 +60,18 @@ function getParkMonuments() {
 // Get names, addresses, and coordinates for parks
 function getParkLocations() {
 
-    var parksUrl = 'https://data.cityofnewyork.us/resource/enfh-gkve.json'
-
-    fetch(parksUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then (function (data) {
-            for (var i = 0; i < data.length; i++) {
-                var parkName = data[i].signname;
-                var address = data[i].location;
-                var coord = data[i].multipolygon.coordinates[0][0][0];
+            for (var i = 0; i < parkCoords.length; i++) {
+                // console.log(parkCoords[i]);
+                var parkName = parkCoords[i].name;
+                var location = parkCoords[i].Location;
+                var lat = parkCoords[i].lat;
+                var lon = parkCoords[i].lon;
                 // Combine information from previous API searches into new park objects and build a local parksArray
                 var newPark = {};
                 newPark['name'] = parkName;
-                newPark['address'] = address;
-                newPark['coord'] = coord;
+                newPark['location'] = location;
+                newPark['lat'] = lat;
+                newPark['lon'] = lon;
                 if (parksWithTrails.includes(parkName)) {
                     newPark['trails'] = 'Yes';
                 } else {
@@ -88,6 +84,5 @@ function getParkLocations() {
                 }
                 parksArray.push(newPark);
         }
-    })
     console.log('parksArray ready');
 };
